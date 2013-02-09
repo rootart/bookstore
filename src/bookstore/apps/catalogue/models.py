@@ -50,6 +50,7 @@ class Product(models.Model):
     name = models.CharField(_("Product name"),
         max_length=255, blank=True, null=True
     )
+    slug = models.SlugField(max_length=255, unique=True)
     description = models.CharField(_("Description"),
         max_length=255,
         blank=True, null=True
@@ -76,3 +77,12 @@ class Product(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product)
+    image = models.ImageField(upload_to="products/images")
+    caption = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.products.name

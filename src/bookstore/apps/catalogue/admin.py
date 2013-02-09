@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Category, Publisher, Tags, TextLanguage, Product
+from .models import Category, Publisher, Tags, TextLanguage,\
+    Product, ProductImage
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -19,8 +20,14 @@ class TextLanguageAdmin(admin.ModelAdmin):
     list_display = ("__unicode__",)
 
 
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("__unicode__",)
+    prepopulated_fields = {'slug': ('name',)}
+    inlines = [ProductImageInline,]
 
 
 admin.site.register(Category, CategoryAdmin)
