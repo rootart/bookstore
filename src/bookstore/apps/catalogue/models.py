@@ -56,6 +56,7 @@ class Product(models.Model):
         blank=True, null=True
     )
     publisher = models.ForeignKey(Publisher, blank=True, null=True)
+    publish_year = models.PositiveIntegerField(blank=True, null=True)
     width = models.PositiveIntegerField(blank=True, null=True)
     height = models.PositiveIntegerField(blank=True, null=True)
     pages = models.PositiveIntegerField(blank=True, null=True)
