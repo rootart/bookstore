@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'Etc/UTC'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 SITE_ID = 1
 
@@ -79,8 +79,9 @@ FIXTURE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(PROJECT_DIR, 'locale')
+    os.path.join(PROJECT_DIR, '..', 'locale'),
 )
+print LOCALE_PATHS
 
 PROJECT_APPS = (
     'catalogue',

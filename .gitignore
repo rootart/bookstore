@@ -3,6 +3,7 @@
 
 # Python
 *.pyc
+*.mo
 *.pyo
 
 # Common IDEs
