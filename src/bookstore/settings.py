@@ -81,7 +81,6 @@ FIXTURE_DIRS = (
 LOCALE_PATHS = (
     os.path.join(PROJECT_DIR, '..', 'locale'),
 )
-print LOCALE_PATHS
 
 PROJECT_APPS = (
     'catalogue',

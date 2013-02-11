@@ -1,0 +1,1 @@
+web: gunicorn bookstore.wsgi:application -b 0.0.0.0:$PORT -w 4

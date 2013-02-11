@@ -9,3 +9,6 @@ python-memcached
 
 PIL
 sorl-thumbnail
+
+gunicorn
+dj-database-url
