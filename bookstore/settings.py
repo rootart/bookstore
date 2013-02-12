@@ -5,6 +5,8 @@ print "PROJ", PROJECT_DIR
 sys.path.append(os.path.join(PROJECT_DIR, 'apps'),)
 PUBLIC_DIR = os.path.join(PROJECT_DIR, '..', 'public')
 
+print "PUB", PUBLIC_DIR
+
 DEBUG = False
 TEMPLATE_DEBUG = False
 
@@ -81,7 +83,7 @@ FIXTURE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(PROJECT_DIR, 'locale'),
+    os.path.join(PROJECT_DIR,  '..', 'locale'),
 )
 
 PROJECT_APPS = (
