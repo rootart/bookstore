@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Category(models.Model):
     name = models.CharField(_("Category name"), max_length=255)
+    slug = models.SlugField(unique=True)
     description = models.TextField(_("Description"),
         blank=True, null=True
     )
@@ -101,15 +102,21 @@ class Product(models.Model):
         verbose_name=_("Tags")
     )
 
-    price = models.PositiveIntegerField(blank=True, null=True,
-        verbose_name=_("Price")
+    price = models.DecimalField(blank=True, null=True,
+        verbose_name=_("Price"),
+        max_digits=8, decimal_places=2
     )
-    stock_price = models.PositiveIntegerField(blank=True, null=True,
-        verbose_name=_("Stock price")
+    stock_price = models.DecimalField(blank=True, null=True,
+        verbose_name=_("Stock price"),
+        max_digits=8, decimal_places=2
     )
 
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True,
+        verbose_name=_("Created date")
+    )
+    modified = models.DateTimeField(auto_now=True,
+        verbose_name=_("Modified date")
+    )
 
     class Meta:
         verbose_name = _("Product")

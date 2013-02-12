@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-09 10:38+0000\n"
+"POT-Creation-Date: 2013-02-12 22:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,68 +23,68 @@ msgstr ""
 msgid "Category name"
 msgstr "Название категории"
 
-#: bookstore/apps/catalogue/models.py:7 bookstore/apps/catalogue/models.py:72
+#: bookstore/apps/catalogue/models.py:8 bookstore/apps/catalogue/models.py:73
 msgid "Description"
 msgstr "Описание"
 
-#: bookstore/apps/catalogue/models.py:11
+#: bookstore/apps/catalogue/models.py:12
 msgid "Position"
 msgstr "Позиция"
 
-#: bookstore/apps/catalogue/models.py:18 bookstore/apps/catalogue/models.py:64
+#: bookstore/apps/catalogue/models.py:19 bookstore/apps/catalogue/models.py:65
 msgid "Category"
 msgstr "Категория"
 
-#: bookstore/apps/catalogue/models.py:19
+#: bookstore/apps/catalogue/models.py:20
 msgid "Categories"
 msgstr "Категории"
 
-#: bookstore/apps/catalogue/models.py:27
+#: bookstore/apps/catalogue/models.py:28
 msgid "Language"
 msgstr "Язык текста"
 
-#: bookstore/apps/catalogue/models.py:30 bookstore/apps/catalogue/models.py:97
+#: bookstore/apps/catalogue/models.py:31 bookstore/apps/catalogue/models.py:97
 msgid "Text language"
 msgstr "Язык текста"
 
-#: bookstore/apps/catalogue/models.py:31
+#: bookstore/apps/catalogue/models.py:32
 msgid "Text languages"
 msgstr "Языки текста"
 
-#: bookstore/apps/catalogue/models.py:38
+#: bookstore/apps/catalogue/models.py:39
 msgid "Publisher name"
 msgstr "Название издательства"
 
-#: bookstore/apps/catalogue/models.py:41 bookstore/apps/catalogue/models.py:77
+#: bookstore/apps/catalogue/models.py:42 bookstore/apps/catalogue/models.py:77
 msgid "Publisher"
 msgstr "Издательство"
 
-#: bookstore/apps/catalogue/models.py:42
+#: bookstore/apps/catalogue/models.py:43
 msgid "Publishers"
 msgstr "Издательства"
 
-#: bookstore/apps/catalogue/models.py:49
+#: bookstore/apps/catalogue/models.py:50
 msgid "Tag name"
 msgstr "Тег"
 
-#: bookstore/apps/catalogue/models.py:51
+#: bookstore/apps/catalogue/models.py:52
 msgid "Tag slug"
 msgstr "Ссылка тега"
 
-#: bookstore/apps/catalogue/models.py:55
+#: bookstore/apps/catalogue/models.py:56
 msgid "Tag"
 msgstr "Тег"
 
-#: bookstore/apps/catalogue/models.py:56
-#: bookstore/apps/catalogue/models.py:101
+#: bookstore/apps/catalogue/models.py:57
+#: bookstore/apps/catalogue/models.py:102
 msgid "Tags"
 msgstr "Теги"
 
-#: bookstore/apps/catalogue/models.py:66
+#: bookstore/apps/catalogue/models.py:67
 msgid "Product name"
 msgstr "Название продукта"
 
-#: bookstore/apps/catalogue/models.py:70
+#: bookstore/apps/catalogue/models.py:71
 msgid "Product slug"
 msgstr "Ссылка продукта"
 
@@ -116,35 +116,71 @@ msgstr "Тип обложки"
 msgid "Is available"
 msgstr "Есть в наличии"
 
-#: bookstore/apps/catalogue/models.py:105
+#: bookstore/apps/catalogue/models.py:100
+msgid "Anticipating product"
+msgstr "Ожидаем поступление"
+
+#: bookstore/apps/catalogue/models.py:106
 msgid "Price"
 msgstr "Цена"
 
-#: bookstore/apps/catalogue/models.py:108
+#: bookstore/apps/catalogue/models.py:109
 msgid "Stock price"
 msgstr "Акционная цена"
 
-#: bookstore/apps/catalogue/models.py:115
-#: bookstore/apps/catalogue/models.py:124
+#: bookstore/apps/catalogue/models.py:113
+msgid "Created date"
+msgstr "Дата создания"
+
+#: bookstore/apps/catalogue/models.py:116
+msgid "Modified date"
+msgstr "Дата изменения"
+
+#: bookstore/apps/catalogue/models.py:120
+#: bookstore/apps/catalogue/models.py:129
 msgid "Product"
 msgstr "Продукт"
 
-#: bookstore/apps/catalogue/models.py:116
+#: bookstore/apps/catalogue/models.py:121
 msgid "Products"
 msgstr "Продукты"
 
-#: bookstore/apps/catalogue/models.py:126
+#: bookstore/apps/catalogue/models.py:131
 msgid "Image file"
 msgstr "Файл изображения"
 
-#: bookstore/apps/catalogue/models.py:129
+#: bookstore/apps/catalogue/models.py:134
 msgid "Image caption"
 msgstr "Описание изображения"
 
-#: bookstore/apps/catalogue/models.py:133
+#: bookstore/apps/catalogue/models.py:138
 msgid "Product image"
 msgstr "Изображение продукта"
 
-#: bookstore/apps/catalogue/models.py:134
+#: bookstore/apps/catalogue/models.py:139
 msgid "Product images"
 msgstr "Изображения продукта"
+
+#: bookstore/apps/orders/models.py:20
+msgid "Order"
+msgstr "Заказ"
+
+#: bookstore/apps/orders/models.py:21
+msgid "Orders"
+msgstr "Заказы"
+
+#: bookstore/apps/orders/models.py:34
+msgid "Ordering item"
+msgstr "Продукт заказа"
+
+#: bookstore/apps/orders/models.py:35
+msgid "Ordering items"
+msgstr "Продукты заказа"
+
+#: bookstore/apps/subscription/models.py:12
+msgid "Subscription"
+msgstr "Подписка"
+
+#: bookstore/apps/subscription/models.py:13
+msgid "Subscriptions"
+msgstr "Подписки"

@@ -8,6 +8,7 @@ class Order(models.Model):
     uuid = models.CharField(max_length=10, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    full_name = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=255, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
@@ -17,8 +18,11 @@ class Order(models.Model):
 
     class Meta:
         verbose_name = _("Order")
-        verbose_name = _("Orders")
+        verbose_name_plural = _("Orders")
         ordering = ("-created",)
+
+    def __unicode__(self):
+        return self.uuid
 
 
 class OrderItem(models.Model):

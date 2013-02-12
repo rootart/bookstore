@@ -5,7 +5,7 @@ from .models import Category, Publisher, Tags, TextLanguage,\
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("__unicode__",)
+    list_display = ("__unicode__", "slug")
 
 
 class PublisherAdmin(admin.ModelAdmin):
@@ -13,7 +13,7 @@ class PublisherAdmin(admin.ModelAdmin):
 
 
 class TagsAdmin(admin.ModelAdmin):
-    list_display = ("__unicode__",)
+    list_display = ("__unicode__", "slug")
 
 
 class TextLanguageAdmin(admin.ModelAdmin):
@@ -25,7 +25,10 @@ class ProductImageInline(admin.TabularInline):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("__unicode__",)
+    list_display = ("__unicode__", "slug", "publisher", "publish_year",\
+        "available", "anticipating", "price", "stock_price")
+    list_filter = ("publisher", "publish_year", "available", "anticipating",\
+        "language", "created", "modified")
     prepopulated_fields = {'slug': ('name',)}
     inlines = [ProductImageInline,]
 
