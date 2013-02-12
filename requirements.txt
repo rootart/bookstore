@@ -12,3 +12,18 @@ sorl-thumbnail
 
 gunicorn
 dj-database-url
+
+
+nose
+webtest
+django-webtest
+django-coverage
+django-nose
+nose-exclude
+
+
+django-extensions
+django-debug-toolbar
+werkzeug
+ipython
+ipdb
