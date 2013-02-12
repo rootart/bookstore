@@ -27,3 +27,6 @@ django-debug-toolbar
 werkzeug
 ipython
 ipdb
+
+django-storages
+boto

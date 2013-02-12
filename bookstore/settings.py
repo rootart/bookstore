@@ -1,11 +1,10 @@
 import os, sys
 
 PROJECT_DIR = os.path.dirname(__file__)
-print "PROJ", PROJECT_DIR
+
 sys.path.append(os.path.join(PROJECT_DIR, 'apps'),)
 PUBLIC_DIR = os.path.join(PROJECT_DIR, '..', 'public')
 
-print "PUB", PUBLIC_DIR
 
 DEBUG = False
 TEMPLATE_DEBUG = False
@@ -57,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 )
 
 ROOT_URLCONF = 'bookstore.urls'
@@ -101,11 +100,18 @@ INSTALLED_APPS = (
     'django_extensions',
     'south',
     'sorl.thumbnail',
+    'storages',
 )+PROJECT_APPS
 
 SOUTH_MIGRATION_MODULES = {
     'catalogue': 'migrations.catalogue',
 }
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_STORAGE_BUCKET_NAME = 'photo-art-ua'
+AWS_ACCESS_KEY_ID = 'AKIAJXFJFZGUIHWCFXUA'
+AWS_SECRET_ACCESS_KEY = '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'
 
 LOGGING = {
     'version': 1,
