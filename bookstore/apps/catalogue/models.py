@@ -69,8 +69,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255, unique=True,
         verbose_name=_("Product slug")
     )
-    description = models.CharField(_("Description"),
-        max_length=255,
+    description = models.TextField(_("Description"),
         blank=True, null=True
     )
     publisher = models.ForeignKey(Publisher, blank=True, null=True,
@@ -97,6 +96,7 @@ class Product(models.Model):
         verbose_name=_("Text language")
     )
     available = models.BooleanField(verbose_name=_("Is available"))
+    anticipating = models.BooleanField(verbose_name=_("Anticipating product"))
     tags = models.ManyToManyField(Tags, blank=True, null=True,
         verbose_name=_("Tags")
     )
@@ -134,4 +134,4 @@ class ProductImage(models.Model):
         verbose_name_plural = _("Product images")
 
     def __unicode__(self):
-        return self.products.name
+        return self.product.name

@@ -87,6 +87,7 @@ LOCALE_PATHS = (
 
 PROJECT_APPS = (
     'catalogue',
+    'subscription'
 )
 
 INSTALLED_APPS = (
@@ -105,9 +106,10 @@ INSTALLED_APPS = (
 
 SOUTH_MIGRATION_MODULES = {
     'catalogue': 'migrations.catalogue',
+    'subscription': 'migrations.subscription'
 }
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'photo-art-ua'
 AWS_ACCESS_KEY_ID = 'AKIAJXFJFZGUIHWCFXUA'
