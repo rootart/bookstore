@@ -87,7 +87,8 @@ LOCALE_PATHS = (
 
 PROJECT_APPS = (
     'catalogue',
-    'subscription'
+    'subscription',
+    'orders'
 )
 
 INSTALLED_APPS = (
@@ -106,7 +107,8 @@ INSTALLED_APPS = (
 
 SOUTH_MIGRATION_MODULES = {
     'catalogue': 'migrations.catalogue',
-    'subscription': 'migrations.subscription'
+    'subscription': 'migrations.subscription',
+    'orders': 'migrations.orders'
 }
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
