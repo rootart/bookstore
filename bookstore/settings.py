@@ -33,6 +33,7 @@ STATIC_ROOT = os.path.join(PUBLIC_DIR, 'static')
 
 STATIC_URL = '/static/'
 
+
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
 )
@@ -79,7 +80,7 @@ FIXTURE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(PROJECT_DIR, '..', 'locale'),
+    os.path.join(PROJECT_DIR, 'locale'),
 )
 
 PROJECT_APPS = (
