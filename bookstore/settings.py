@@ -3,7 +3,7 @@ import os, sys
 PROJECT_DIR = os.path.dirname(__file__)
 
 sys.path.append(os.path.join(PROJECT_DIR, 'apps'),)
-PUBLIC_DIR = os.path.join(PROJECT_DIR, '..', 'public')
+PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public')
 
 
 DEBUG = False
@@ -82,7 +82,7 @@ FIXTURE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    os.path.join(PROJECT_DIR,  '..', 'locale'),
+    os.path.join(PROJECT_DIR, '..', 'locale'),
 )
 
 PROJECT_APPS = (
