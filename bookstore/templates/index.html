@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block content %}
+{% for book in products %}
+name - {{ book.name }}<br>
+description - {{ book.description }}<br>
+price - {{ book.price }}
+
+    {% for image in book.productimage_set.all %}
+      {% thumbnail image.image "100x100" crop="center" as im %}
+          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+      {% endthumbnail %}
+    {% endfor %}
+{% endfor %}
+{% endblock content %}

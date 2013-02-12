@@ -117,6 +117,7 @@ class Product(models.Model):
     modified = models.DateTimeField(auto_now=True,
         verbose_name=_("Modified date")
     )
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = _("Product")
