@@ -21,4 +21,8 @@ DATABASES = {
     }
 }
 
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
 SECRET_KEY = 'ur!i@&amp;t56z&amp;=pwwcj3^oi))b9w50a*&amp;mju#q@v%2l!l7^ze5-('

@@ -1,0 +1,14 @@
+django>=1.4.3
+psycopg2
+
+south
+
+django-pagination
+django_compressor
+python-memcached
+
+PIL
+sorl-thumbnail
+
+gunicorn
+dj-database-url
