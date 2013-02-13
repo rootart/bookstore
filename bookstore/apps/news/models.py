@@ -8,7 +8,9 @@ class Post(models.Model):
     title = models.CharField(_("Post title"), max_length=255)
     slug = models.SlugField(_("Post url"), unique=True)
     content = models.TextField(_("Post content"))
-    image = ImageField(upload_to="posts/top-images")
+    image = ImageField(upload_to="posts/top-images",
+        verbose_name=_("Image")
+    )
     show_on_main = models.BooleanField(default=True,
         verbose_name=_("Show on mainpage")
     )
