@@ -5,16 +5,28 @@ from catalogue.models import Product
 
 
 class Order(models.Model):
-    uuid = models.CharField(max_length=10, unique=True)
+    uuid = models.CharField(max_length=10, unique=True,
+        verbose_name=_("Order unique id")
+    )
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    full_name = models.CharField(max_length=255, blank=True, null=True)
-    email = models.EmailField(blank=True, null=True)
-    phone = models.CharField(max_length=255, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
-    comments = models.TextField(blank=True, null=True)
-    was_contacted = models.BooleanField()
-    was_delivered = models.BooleanField()
+    full_name = models.CharField(max_length=255, blank=True, null=True,
+        verbose_name=_("Full name")
+    )
+    email = models.EmailField(blank=True, null=True,
+        verbose_name=_("Email")
+    )
+    phone = models.CharField(max_length=255, blank=True, null=True,
+        verbose_name=_("Phone")
+    )
+    address = models.TextField(blank=True, null=True,
+        verbose_name=_("Address")
+    )
+    comments = models.TextField(blank=True, null=True,
+        verbose_name=_("Additional comments")
+    )
+    was_contacted = models.BooleanField(verbose_name=_("Was contacted"))
+    was_delivered = models.BooleanField(verbose_name=_("Was delivered"))
 
     class Meta:
         verbose_name = _("Order")
@@ -26,9 +38,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Product)
-    order = models.ForeignKey(Order)
-    quantity = models.PositiveIntegerField(default=1)
+    product = models.ForeignKey(Product, verbose_name=_("Product"))
+    order = models.ForeignKey(Order, verbose_name=_("Order"))
+    quantity = models.PositiveIntegerField(default=1, verbose_name=_("Quantity"))
 
     class Meta:
         verbose_name = _("Ordering item")

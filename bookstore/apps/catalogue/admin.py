@@ -3,6 +3,8 @@ from django.contrib import admin
 from .models import Category, Publisher, Tags, TextLanguage,\
     Product, ProductImage
 
+from sorl.thumbnail.admin import AdminImageMixin
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("__unicode__", "slug")
@@ -20,11 +22,11 @@ class TextLanguageAdmin(admin.ModelAdmin):
     list_display = ("__unicode__",)
 
 
-class ProductImageInline(admin.TabularInline):
+class ProductImageInline(AdminImageMixin, admin.TabularInline):
     model = ProductImage
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ("__unicode__", "slug", "publisher", "publish_year",\
         "available", "anticipating", "price", "stock_price")
     list_filter = ("publisher", "publish_year", "available", "anticipating",\

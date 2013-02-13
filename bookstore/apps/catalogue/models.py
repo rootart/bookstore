@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from sorl.thumbnail import ImageField
+
 
 class Category(models.Model):
     name = models.CharField(_("Category name"), max_length=255)
@@ -117,7 +119,17 @@ class Product(models.Model):
     modified = models.DateTimeField(auto_now=True,
         verbose_name=_("Modified date")
     )
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True,
+        verbose_name=_("Is active")
+    )
+    catalogue_image = ImageField(upload_to="catalogue/list-images",
+        verbose_name=_("Catalogue image"),
+        blank=True, null=True
+    )
+    main_cover_image = ImageField(upload_to="category/covers",
+        verbose_name=_("Main cover image"),
+        blank=True, null=True
+    )
 
     class Meta:
         verbose_name = _("Product")
@@ -130,7 +142,7 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, verbose_name=_("Product"))
-    image = models.ImageField(upload_to="products/images",
+    image = ImageField(upload_to="products/images",
         verbose_name=_("Image file")
     )
     caption = models.TextField(blank=True, null=True,
