@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'', include('catalogue.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    (r'^search/', include('haystack.urls')),
 )
 
 urlpatterns += patterns('',

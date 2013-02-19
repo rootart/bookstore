@@ -85,6 +85,9 @@ class Product(models.Model):
     publish_year = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Publishing year")
     )
+    author = models.CharField(_("Author"), blank=True, null=True,
+        max_length=255
+    )
     width = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Width"),
         help_text=_("in cm")
