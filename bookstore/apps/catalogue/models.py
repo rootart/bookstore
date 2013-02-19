@@ -61,6 +61,10 @@ class Tags(models.Model):
     def __unicode__(self):
         return self.name
 
+class ProductManager(models.Manager):
+    def active(self):
+        return self.get_query_set().filter(is_active=True)
+
 
 class Product(models.Model):
     category = models.ForeignKey(Category,
@@ -130,6 +134,8 @@ class Product(models.Model):
         verbose_name=_("Main cover image"),
         blank=True, null=True
     )
+
+    objects = ProductManager()
 
     class Meta:
         verbose_name = _("Product")

@@ -5,6 +5,13 @@ PROJECT_DIR = os.path.dirname(__file__)
 sys.path.append(os.path.join(PROJECT_DIR, 'apps'),)
 PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public')
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(PROJECT_DIR, 'whoosh_index'),
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 DEBUG = False
 TEMPLATE_DEBUG = False
@@ -104,6 +111,7 @@ INSTALLED_APPS = (
     'south',
     'sorl.thumbnail',
     'storages',
+    'haystack'
 )+PROJECT_APPS
 
 SOUTH_MIGRATION_MODULES = {

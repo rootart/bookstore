@@ -30,3 +30,6 @@ ipdb
 
 django-storages
 boto
+
+whoosh
+-e git+https://github.com/toastdriven/django-haystack#egg=haystack
