@@ -1,8 +1,15 @@
+import random
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from catalogue.models import Product
 
+NUMBERS = "0123456789"
+
+
+def gen_uuid(range=5):
+    return ''.join([random.choice(NUMBERS) for i in xrange(range)])
 
 class Order(models.Model):
     uuid = models.CharField(max_length=10, unique=True,
@@ -35,6 +42,12 @@ class Order(models.Model):
 
     def __unicode__(self):
         return self.uuid
+
+    def save(self, *args, **kwargs):
+        if not self.uuid:
+            uuid = gen_uuid()
+            self.uuid = uuid
+        super(Order, self).save(*args, **kwargs)
 
 
 class OrderItem(models.Model):

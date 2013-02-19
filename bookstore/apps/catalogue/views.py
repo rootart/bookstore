@@ -32,11 +32,31 @@ def category(request, slug):
 def book_details(request, category_slug, slug):
     try:
         category = Category.objects.get(slug=category_slug)
-        product = Product.objects.active(slug=slug, category=category)
+        product = Product.objects.active().filter(slug=slug, category=category)
     except (Category.DoesNotExist, Product.DoesNotExist):
         raise Http404
 
     data = {
+        'product': product,
+        'category': category
+    }
+    return render(request, 'book-details.html', data)
+
+
+def book_order(request, category_slug, slug):
+    from orders.forms import OrderForm
+    form = OrderForm(request.POST or None)
+    try:
+        category = Category.objects.get(slug=category_slug)
+        product = Product.objects.active().filter(slug=slug, category=category)
+    except (Category.DoesNotExist, Product.DoesNotExist):
+        raise Http404
+    
+    if request.method == "POST" and form.is_valid():
+        form.save()
+
+    data = {
+        'form': form,
         'product': product,
         'category': category
     }
