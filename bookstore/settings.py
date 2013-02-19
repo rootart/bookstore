@@ -111,7 +111,8 @@ INSTALLED_APPS = (
     'south',
     'sorl.thumbnail',
     'storages',
-    'haystack'
+    'haystack',
+    'pagination'
 )+PROJECT_APPS
 
 SOUTH_MIGRATION_MODULES = {
