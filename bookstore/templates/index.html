@@ -1,17 +1,57 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail i18n staticfiles %}
 
+{% block subcategories %}{% endblock subcategories %}
 
 {% block content %}
-{% for book in products %}
-name - {{ book.name }}<br>
-description - {{ book.description }}<br>
-price - {{ book.price }}
-
-    {% for image in book.productimage_set.all %}
-      {% thumbnail image.image "100x100" crop="center" as im %}
-          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-      {% endthumbnail %}
+	<div class="main-article">
+		<ul class="">
+      {% for post in  posts %}
+            <li class="active" data-article="{{ forloop.counter }}" {% if not forloop.counter == 1 %}style="display:none"{% endif %}>
+                {% thumbnail post.image "380x200" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+			  <article>
+                  <header>
+                    <a href="#">{{ post.title }}</a>
+                  </header>
+                  <p>{{ post.content|linebreaks }}</p>
+                </article>
+            </li>
     {% endfor %}
-{% endfor %}
+          </ul>
+
+		<nav class="bullets">
+      {% for post in posts %}
+		      <a href="javascript:;" class="{% if forloop.first %}active{% endif %}" data-article="{{ forloop.counter }}"></a>
+      {% endfor %}
+	   </nav>
+
+   </div>
+            
+	<hr>
+			
+        <div class="catalogue cf">
+          {% for product in products %}
+          		<a href="{% url book-details product.category.slug product.slug %}" class=""> 
+                      <figure>
+                        {% thumbnail product.catalogue_image "145x145" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
+                        {% endthumbnail %}
+                        <figcaption>{{ product.author }} <br>{{ product.name }}</figcaption>
+                      </figure>
+          	   </a>
+          {% endfor %}
+        </div>
+			
+	<hr>
+
+	<form action="" method="get" class="subscribe">
+		<label for="subsribe">{% trans "subscribe" %}</label>
+		<input type="text" name="email" value="" id="subsribe">
+	</form>
+
+      </div>
+    </div>
+
 {% endblock content %}

@@ -2,20 +2,31 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 
 from .models import Product, Category
+from news.models import Post
 
 
 def homepage(request):
-    products = Product.objects.filter(available=True)
+    products = Product.objects.filter(available=True, show_on_main=True)
+    posts = Post.objects.filter(
+        is_published=True,
+        show_on_main=True
+        ).select_related('category')
+
     data = {
         'products': products,
+        'posts': posts
     }
+
     return render(request, 'index.html', data)
 
 
 def catalogue(request):
+    categories = Category.objects.all()
     data = {
-        'products': Product.objects.active().all()
+        'products': Product.objects.active().all(),
+        'categories': categories
     }
+
     return render(request, 'catalogue.html', data)
 
 

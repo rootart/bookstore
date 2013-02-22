@@ -137,6 +137,7 @@ class Product(models.Model):
         verbose_name=_("Main cover image"),
         blank=True, null=True
     )
+    show_on_main = models.BooleanField(default=True)
 
     objects = ProductManager()
 
