@@ -77,3 +77,12 @@ def book_order(request, category_slug, slug):
 def search(request):
     data = {}
     return render(request, 'search.html', data)
+
+
+def post_details(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    
+    data = {
+        'post': post
+    }
+    return render(request, 'post-details.html', data)

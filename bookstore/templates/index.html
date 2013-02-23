@@ -13,9 +13,9 @@
                 {% endthumbnail %}
 			  <article>
                   <header>
-                    <a href="#">{{ post.title }}</a>
+                    <a href="{% url post-details post.slug %}">{{ post.title }}</a>
                   </header>
-                  <p>{{ post.content|linebreaks }}</p>
+                  <p>{{ post.content|linebreaks|truncatewords:"50" }}</p>
                 </article>
             </li>
     {% endfor %}

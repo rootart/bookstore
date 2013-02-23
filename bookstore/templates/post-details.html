@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block subcategories %}{% endblock subcategories %}
+
+{% block content %}
+<div class="post">
+      <img src="http://placehold.it/150x150" alt="">
+   <article>
+          <header>
+            {{ post.title }}
+          </header>
+          <p>{{ post.content|linebreaksbr }}</p>
+       </article>
+ </div>
+ 
+ <hr>
+ <form action="" method="get" class="subscribe">
+ 	<label for="subsribe">подписаться</label>
+ 	<input type="text" name="" value="" id="subsribe">
+ </form>
+{% endblock content %}

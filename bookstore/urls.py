@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'', include('catalogue.urls')),
+    url(r'^post/(?P<slug>[-\w]+)/$', 'catalogue.views.post_details', name='post-details'),
     url(r'^admin/', include(admin.site.urls)),
     (r'^search/', include('haystack.urls')),
 )
