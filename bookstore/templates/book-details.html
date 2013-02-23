@@ -16,6 +16,9 @@
         {% endthumbnail %}
       {% endfor %}
 	  </div>
+    <div id="fb-root"></div>
+    <br><br>
+    <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 
    </div>
 			   
@@ -25,16 +28,16 @@
           </header>
           <p class="desc">{{ product.description|linebreaksbr|truncatewords:"60" }}</p>
 	  <ul class="detail-list">
-		  <li>Издательство: Aperture</li>
-		  <li>Год издания: 1997</li>
-		  <li>твердый переплет</li>
-		  <li>страницы: 100</li>
-		  <li>размер: 130*120</li>
-		  <li>язык текста: английский</li>
+		  {% if product.publisher %}<li>Издательство: {{ product.publisher.name }}</li>{% endif %}
+		  {% if product.publish_year %}<li>Год издания: {{ product.publish_year }}</li>{% endif %}
+      {% if product.binding %}<li>{{ product.binding }}</li>{% endif %}
+		  {% if product.pages %}<li>страницы: {{ product.pages }}</li>{% endif %}
+		  {% if product.width and product.height %}<li>размер: {{ product.width }}x{{ product.height }}</li>{% endif %}
+		  {% if product.language %}<li>язык текста: {{ product.language.language }}</li>{% endif %}
 	  </ul>
 	  <p class="price">Цена: {{ product.price }} грн.</p>
-	  <p class="waiting">ожидается</p>
-	  <a href="#" class="btn-order" id="show-popup">заказать</a>
+	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается{% endif %}</p>
+	  <a href="#" class="btn-order" id="show-popup">{% if product.available and not product.anticipating %}купить{% elif product.anticipating %}заказать{% endif %}</a>
 	  <div class="tags">
 		  <header>{% trans "теги" %}:</header>
       {% for tag in product.tags.all %}
