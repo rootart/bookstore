@@ -12,4 +12,10 @@ $(function(){
       }     
   });
   
+  
+  $('a.book-gallery').fancybox({
+    'autoHeight': true,
+    'autoWidth': true 
+  });
+  
 });
