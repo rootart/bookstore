@@ -43,8 +43,8 @@ def category(request, slug):
 def book_details(request, category_slug, slug):
     try:
         category = Category.objects.get(slug=category_slug)
-        product = Product.objects.active().filter(slug=slug, category=category)
-    except (Category.DoesNotExist, Product.DoesNotExist):
+        product = Product.objects.active().filter(slug=slug, category=category)[0]
+    except (Category.DoesNotExist, Product.DoesNotExist, IndexError):
         raise Http404
 
     data = {

@@ -1,3 +1,58 @@
+{% extends "base.html" %}{% load i18n thumbnail %}
+
+{% block subcategories %}{% endblock subcategories %}
+
+{% block content %}
+<div class="detail">
+	<div class="detail-image">
+	  <figure>
+    {% thumbnail product.main_cover_image "290x340" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
+    {% endthumbnail %}
+	  </figure>
+
+	  <div class="detail-images">
+      {% for image in product.productimage_set.all %}
+        {% thumbnail image.image "32x32" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
+        {% endthumbnail %}
+      {% endfor %}
+	  </div>
+
+   </div>
+			   
+   <article>
+          <header class="title">
+            {{ product.name }}
+          </header>
+          <p class="desc">{{ product.description|linebreaksbr|truncatewords:"60" }}</p>
+	  <ul class="detail-list">
+		  <li>Издательство: Aperture</li>
+		  <li>Год издания: 1997</li>
+		  <li>твердый переплет</li>
+		  <li>страницы: 100</li>
+		  <li>размер: 130*120</li>
+		  <li>язык текста: английский</li>
+	  </ul>
+	  <p class="price">Цена: {{ product.price }} грн.</p>
+	  <p class="waiting">ожидается</p>
+	  <a href="#" class="btn-order" id="show-popup">заказать</a>
+	  <div class="tags">
+		  <header>{% trans "теги" %}:</header>
+      {% for tag in product.tags.all %}
+        <a href="#">{{ tag.name }}</a>
+      {% endfor %}
+	  </div>
+       </article>
+ </div>
+ 
+ <hr>
+ <form action="" method="get" class="subscribe">
+ 	<label for="subsribe">подписаться</label>
+ 	<input type="text" name="" value="" id="subsribe">
+ </form>
+{% endblock content %}
+
 <form action="." method="post" accept-charset="utf-8">{% csrf_token %}
   {{ form.as_p }}
 

@@ -18,5 +18,6 @@ atlassian-ide-plugin.xml
 *.db
 settings_local.py
 /public/static
-/public/media
+bookstore/public/media
+public/
 whoosh_index/
