@@ -6,9 +6,7 @@
 <div class="detail">
 	<div class="detail-image">
 	  <figure>
-    {% thumbnail product.main_cover_image "290x340" crop="center" as im %}
-        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
-    {% endthumbnail %}
+        <img src="{{ product.main_cover_image.url }}" alt="{{ product.name }}">
 	  </figure>
 
 	  <div class="detail-images">
