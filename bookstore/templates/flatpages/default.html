@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block subcategories %}{% endblock subcategories %}
+
+{% block content %}
+<div class="post">
+   <article>
+          <header>
+            {{ flatpage.title }}
+          </header>
+          <p>{{ flatpage.content|linebreaksbr }}</p>
+       </article>
+ </div>
+ 
+ <hr>
+ <form action="" method="get" class="subscribe">
+ 	<label for="subsribe">подписаться</label>
+ 	<input type="text" name="" value="" id="subsribe">
+ </form>
+{% endblock content %}
