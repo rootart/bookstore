@@ -30,19 +30,18 @@
           {% block header %}
               <header class="head cf">
     			  <div class="top">
-    	            <a class="logo" href="#"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="187" height="86"></a>
+    	            <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="187" height="86"></a>
     	            <nav>
     	              <a href="{% url catalogue %}">Каталог</a>
     	              <a href="/about/" class="active">О нас</a>
     	              <a href="/contacts/">Контакты</a>
-    	              <a href="javascript:;">Поиск</a>
+					  <a href="javascript:;" class="search-menu" ><span>Поиск</span>
+	    	            <form class="search" action="/search/" method="get" accept-charset="utf-8">
+	    	                <input type="text" name="q" value="" id="q">
+	    	                <input type="submit" value="ok">
+	    	            </form>
+					  </a>	
     	            </nav>
-    	            <form class="search" action="" method="post" accept-charset="utf-8">
-    	              <div class="">
-    	                <input type="text" name="q" value="" id="q">
-    	                <input type="submit" value="ok">
-    	              </div>
-    	            </form>
     	            <div class="menu-space"></div>
     	            <a class="facebook-link" href="#"></a>
     		      </div>

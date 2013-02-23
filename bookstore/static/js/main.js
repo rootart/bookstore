@@ -1,4 +1,12 @@
 $(function(){
+	
+  //search menu
+  $('.search-menu').click(function(){
+    //alert('ok');
+    $(".menu-space").width('158');
+    $('.search-menu .search').css('display','inline-block');
+  });
+  
   /*show popup*/
   $('#show-popup').click(function(e) {
 	  $('#popup-order').show();

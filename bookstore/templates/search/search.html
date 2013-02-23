@@ -1,6 +1,47 @@
-{% extends 'base.html' %}
+{% extends "base.html" %} {% load i18n thumbnail %}
+
+{% block subcategories %}
+<div class="category">
+  {% for category in categories %}
+        <a href="{% url category-details category.slug %}">{{ category.name }}</a>
+  {% endfor %}
+</div>
+{% endblock subcategories %}
+
 
 {% block content %}
+
+<div class="catalogue cf">
+  {% for product in page.object_list %}
+  		<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
+              <figure>
+                {% thumbnail product.object.catalogue_image "145x145" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
+                {% endthumbnail %}
+                <figcaption>{{ product.object.author }} <br>{{ product.object.name }}</figcaption>
+              </figure>
+  	   </a>
+  {% endfor %}
+  {% if not page.object_list %}Нет результатов по вашему запросу.{% endif %}
+</div>
+
+<nav class="pagination">
+  <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">...</a>
+      <a href="#">5</a>
+ </nav>
+ 
+<hr>
+<form action="" method="get" class="subscribe">
+	<label for="subsribe">подписаться</label>
+	<input type="text" name="" value="" id="subsribe">
+</form>
+
+{% endblock content %}
+
+
     <h2>Search</h2>
 
     <form method="get" action=".">
@@ -36,4 +77,3 @@
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
     </form>
-{% endblock %}
