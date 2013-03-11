@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponse
 
 from .models import Product, Category
 from news.models import Post
@@ -57,25 +57,27 @@ def book_details(request, category_slug, slug):
 
 ORDER_POPUP_MESSAGE = u"""
     Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
-
-    Возможность закрыть всплывающее окно после отправки заказа
 """
 
 def book_order(request, category_slug, slug):
     from orders.forms import OrderForm
+    from orders.models import OrderItem
     form = OrderForm(request.POST or None)
     try:
         category = Category.objects.get(slug=category_slug)
-        product = Product.objects.active().filter(slug=slug, category=category)
+        product = Product.objects.active().filter(slug=slug, category=category)[0]
     except (Category.DoesNotExist, Product.DoesNotExist):
         raise Http404
     
     if request.method == "POST" and form.is_valid():
-        form.save()
+        order = form.save()
+        order_item = OrderItem.objects.create(order=order, product=product)
+        #TODO, send email
+        return HttpResponse(ORDER_POPUP_MESSAGE)
 
     data = {
         'form': form,
-        'product': product[0],
+        'product': product,
         'category': category
     }
     return render(request, 'book-order.html', data)
