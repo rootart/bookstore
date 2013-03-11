@@ -61,21 +61,23 @@ ORDER_POPUP_MESSAGE = u"""
 
 def book_order(request, category_slug, slug):
     from orders.forms import OrderForm
+    from orders.models import OrderItem
     form = OrderForm(request.POST or None)
     try:
         category = Category.objects.get(slug=category_slug)
-        product = Product.objects.active().filter(slug=slug, category=category)
+        product = Product.objects.active().filter(slug=slug, category=category)[0]
     except (Category.DoesNotExist, Product.DoesNotExist):
         raise Http404
     
     if request.method == "POST" and form.is_valid():
-        form.save()
+        order = form.save()
+        order_item = OrderItem.objects.create(order=order, product=product)
         #TODO, send email
         return HttpResponse(ORDER_POPUP_MESSAGE)
 
     data = {
         'form': form,
-        'product': product[0],
+        'product': product,
         'category': category
     }
     return render(request, 'book-order.html', data)
