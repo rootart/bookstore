@@ -1,8 +1,8 @@
 {% load i18n %}
 <div>
-  
-  <form action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
+  <form class="order-form" action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
     {{ form.as_p }}
+	<p class="info">Поля, обязательные для заполнения*</p>
     <p><input type="submit" value="{% trans "Отправить заказ" %}"></p>
   </form>
 </div>
