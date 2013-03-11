@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 
@@ -53,6 +54,12 @@ def book_details(request, category_slug, slug):
     }
     return render(request, 'book-details.html', data)
 
+
+ORDER_POPUP_MESSAGE = u"""
+    Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
+
+    Возможность закрыть всплывающее окно после отправки заказа
+"""
 
 def book_order(request, category_slug, slug):
     from orders.forms import OrderForm
