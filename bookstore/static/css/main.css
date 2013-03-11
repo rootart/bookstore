@@ -541,6 +541,9 @@ ul {
 .detail-image figure {
 	margin:0 0 15px 0;
 	text-align: center;
+	
+	width: 290px;
+	overflow: hidden;
 }
 .detail-image img {
 	display: block;
@@ -673,7 +676,7 @@ ul {
 .popup-wrap {
     background: #FEFEFE;
     border-radius: 4px;
-    box-shadow: 0 1xp 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 1px 3px rgba(0, 0, 0, 0.3);
 
     margin-top: -175px;
     margin-left: -250px;
@@ -706,4 +709,33 @@ ul {
 	font-weight: bold;
 	line-height: 1.5;
 	 margin-bottom: 30px;
+}
+
+.order-form {
+	
+}
+.order-form p {
+	margin-bottom: 10px
+}
+.order-form label {
+    display: inline-block;
+    vertical-align: middle;
+	
+	width: 110px;
+}
+.order-form input[type="submit"] {
+    border: none;
+	font-size: 1em;
+}
+.order-form input[type="text"] {
+	width: 130px;
+	
+    display: inline-block;
+    vertical-align: middle;
+    
+	border: 1px solid #5B5B5B;
+    border-radius: 4px;
+    box-shadow: none;
+    margin: 0;
+    padding: 3px 5px;
 }
