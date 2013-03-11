@@ -7,8 +7,13 @@ $(function(){
     $('.search-menu .search').css('display','inline-block');
   });
   
+
+  
   /*show popup*/
   $('#show-popup').click(function(e) {
+    var order_link = $(this).attr('data-url');
+    console.log(order_link);
+    $('#popup-order .popup-wrap').load(order_link);
 	  $('#popup-order').show();
 	  
 	  e.preventDefault()

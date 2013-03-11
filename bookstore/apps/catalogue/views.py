@@ -68,10 +68,10 @@ def book_order(request, category_slug, slug):
 
     data = {
         'form': form,
-        'product': product,
+        'product': product[0],
         'category': category
     }
-    return render(request, 'book-details.html', data)
+    return render(request, 'book-order.html', data)
 
 
 def search(request):

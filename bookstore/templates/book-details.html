@@ -50,7 +50,7 @@
 	  </ul>
 	  <p class="price">Цена: {{ product.price }} грн.</p>
 	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается{% endif %}</p>
-	  <a href="#" class="btn-order" id="show-popup">{% if product.available and not product.anticipating %}купить{% elif product.anticipating %}заказать{% endif %}</a>
+	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available and not product.anticipating %}купить{% elif product.anticipating %}заказать{% endif %}</a>
 	  <div class="tags">
 		  <header>{% trans "теги" %}:</header>
       {% for tag in product.tags.all %}
@@ -65,10 +65,10 @@
  	<label for="subsribe">подписаться</label>
  	<input type="text" name="" value="" id="subsribe">
  </form>
+ 
+ <div id="popup-order" class="popup-container">
+ 		    <div class="popup-overlay"></div>
+ 		    <div class="popup-wrap"></div>
+ </div>
+        
 {% endblock content %}
-
-<form action="." method="post" accept-charset="utf-8">{% csrf_token %}
-  {{ form.as_p }}
-
-  <p><input type="submit" value="Continue &rarr;"></p>
-</form>
