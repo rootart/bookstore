@@ -3,7 +3,7 @@ $(function(){
   //search menu
   $('.search-menu').click(function(){
     //alert('ok');
-    $(".menu-space").width('158');
+    $(".menu-space").width('271');
     $('.search-menu .search').css('display','inline-block');
   });
   

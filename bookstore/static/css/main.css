@@ -226,7 +226,7 @@ a {
 
 hr {
   height: 3px;
-  background: #7D183D;
+  background: #6f1030;
 }
 
 ul {
@@ -235,7 +235,7 @@ ul {
 	list-style-type: none;
 }
 .wrap {
-  width: 980px;
+  width: 1100px;
   margin: 0 auto;
   
 }
@@ -270,7 +270,7 @@ ul {
   
   padding: 8px 10px;
   
-  background: #801f42;
+  background: #6f1030;
   border-radius: 4px;
   
   text-transform: uppercase;
@@ -287,11 +287,12 @@ ul {
 }
 .head .search {
     display: none;
+	margin-top: -2px;
 }
 .head input[type="text"] {
     width: 90px;
     margin:0;
-    padding:0 5px 0 5px;
+    padding:1px 5px 1px 5px;
     border-radius: 4px;
     border: none;
     box-shadow: none;
@@ -314,7 +315,7 @@ ul {
 
 .head nav a:hover,
 .head nav .acttive {
-	background: #53122a;
+	background: #aa1b5b;
 }
 .category {
 	margin: -16px 0 0 187px;
@@ -328,7 +329,7 @@ ul {
   
   padding: 3px 4px;
   
-  background: #801f42;
+  background: #6f1030;
   border-radius: 4px;
   
   text-transform: uppercase;
@@ -343,7 +344,7 @@ ul {
   right: 0;
   
   padding: 15px 5px;
-  background: url(../img/facebook.png) 11px 5px no-repeat #801f42;
+  background: url(../img/facebook.png) 11px 5px no-repeat #6f1030;
   border-radius: 4px;
   
   margin-left: 7px;
@@ -353,11 +354,11 @@ ul {
 }
 
 .head .menu-space {
-  background: #801f42;
+  background: #6f1030;
   height: 30px;
   margin-left: 5px;
   float: left;
-  width: 291px;
+  width: 411px;
   border-radius: 4px;
 }
 
@@ -376,6 +377,9 @@ ul {
 	vertical-align: top;
 	margin-right: 20px;
 	border-radius: 4px;
+	
+	width: 380px;
+	overflow: hidden;
 }
 .main-article article {
 	display: inline-block;
@@ -385,9 +389,13 @@ ul {
 	line-height: 1.5;
 }
 .main-article header {
+	
+	margin-bottom: 10px;
+}
+.main-article header a {
 	font-weight: bold;
 	font-size: 1.4em;
-	margin-bottom: 10px;
+	color: #000;
 }
 .main-article p {
 	font-weight: 100;
@@ -412,7 +420,7 @@ ul {
 }
 .bullets .active, 
 .bullets a:hover {
-    background: #801f42;
+    background: #6f1030;
 }
 .catalogue {
   padding: 15px 15px 0 15px;
@@ -425,12 +433,14 @@ ul {
 
 .catalogue figure {
   float: left;
-  margin-right: 9px;
+  margin-right: 14px;
   margin-bottom: 30px;
   text-align: center;
-  width: 145px;
+  
+  width: 135px;
+  overflow: hidden;
 }
-.catalogue figure:nth-child(5n) {
+.catalogue a:nth-child(6n) figure {
   margin-right: 0;
   
 }
@@ -441,7 +451,11 @@ ul {
 }
 .subscribe {
 	margin: 10px 15px 20px;
-    background: #801f42;
+	
+    /*background: #6f1030;*/
+	/*background: #a7a7a7;*/
+	background: #F5F5F5;
+	
     border-radius: 4px;
 	padding: 8px 10px;
 	
@@ -454,17 +468,25 @@ ul {
 	color: #fff;
 	text-transform: uppercase;
 	margin-right: 8px;
+	
+    display: inline-block;
+	vertical-align: top;
 }
 .subscribe input[type="text"] {
 	font-size: 1.1em;
     line-height: 1;
-	color: #000;
+	
+	/*color: #000;*/
+	color: #a7a7a7;
 	
 	background: #fff;
 	border-radius: 4px;
 	border: none;
 	
 	padding: 3px 5px;
+	
+    display: inline-block;
+	vertical-align: top;
 }
 .post {
      padding: 20px 15px;	
@@ -495,7 +517,7 @@ ul {
 	text-align: center;
 }
 .pagination a {
-    background: #801f42;
+    background: #6f1030;
     border-radius: 4px;
 	font-size: 1em;
 	line-height: 1;
@@ -589,7 +611,7 @@ ul {
   
     padding: 8px 10px;
   
-    background: #801f42;
+    background: #6f1030;
     border-radius: 4px;
   
     text-transform: uppercase;
@@ -669,7 +691,6 @@ ul {
 }
 .popup-wrap  div {
 	padding: 40px 30px;
-	
 }
 .popup-wrap:after {
 	position: absolute;
