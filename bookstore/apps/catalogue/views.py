@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404
+from django.http import Http404, HttpResponse
 
 from .models import Product, Category
 from news.models import Post
@@ -57,8 +57,6 @@ def book_details(request, category_slug, slug):
 
 ORDER_POPUP_MESSAGE = u"""
     Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
-
-    Возможность закрыть всплывающее окно после отправки заказа
 """
 
 def book_order(request, category_slug, slug):
@@ -72,6 +70,8 @@ def book_order(request, category_slug, slug):
     
     if request.method == "POST" and form.is_valid():
         form.save()
+        #TODO, send email
+        return HttpResponse(ORDER_POPUP_MESSAGE)
 
     data = {
         'form': form,
