@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Product, Category
 from news.models import Post
@@ -59,6 +60,8 @@ ORDER_POPUP_MESSAGE = u"""
     Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
 """
 
+
+@csrf_exempt
 def book_order(request, category_slug, slug):
     from orders.forms import OrderForm
     from orders.models import OrderItem

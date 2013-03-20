@@ -1,22 +1,11 @@
 {% load i18n %}
+{% load thumbnail i18n staticfiles %}
 <div>
   <form id="order-form" class="order-form" action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
     {{ form.as_p }}
-	<p class="info">Поля, обязательные для заполнения*</p>
+	<p class="info">{% trans "Поля, обязательные для заполнения*" %}</p>
     <p><input class="btn-order" type="submit" value="{% trans "Отправить заказ" %}"></p>
   </form>
-  <script type="text/javascript" charset="utf-8">
-    $('#order-form').validate({
-      onKeyup : true,
-			eachValidField : function() {
+  <script type="text/javascript" src="{% static "js/order.js" %}"></script>
 
-				$(this).css({'border': '1px solid #5B5B5B'});
-			},
-			eachInvalidField : function() {
-
-				$(this).css({'border': '1px solid red'});
-			}
-
-          });
-  </script>
 </div>
