@@ -10,7 +10,8 @@ jQuery ->
     order_link = $(@).attr 'data-url'
     $('#popup-order .popup-wrap').load order_link
     $('#popup-order').show()
-    return False
+    $('#order-form').validate()
+    return
 
   # close popup on escape
   $('body').keypress (e) ->
@@ -19,3 +20,6 @@ jQuery ->
   $('a.book-gallery').fancybox
     'autoHeight': true
     'autoWidth': true
+
+  
+  return

@@ -14,14 +14,13 @@
       order_link = $(this).attr('data-url');
       $('#popup-order .popup-wrap').load(order_link);
       $('#popup-order').show();
-      return False;
     });
     $('body').keypress(function(e) {
       if (e.keyCode === 27) {
         return $('$popup-order').hide();
       }
     });
-    return $('a.book-gallery').fancybox({
+    $('a.book-gallery').fancybox({
       'autoHeight': true,
       'autoWidth': true
     });
