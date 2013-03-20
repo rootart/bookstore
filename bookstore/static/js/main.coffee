@@ -15,7 +15,7 @@ jQuery ->
 
   # close popup on escape
   $('body').keypress (e) ->
-    if e.keyCode is 27 then $('$popup-order').hide()
+    if e.keyCode is 27 then $('#popup-order').hide()
 
   # fancybox gallery
   $('a.book-gallery').fancybox

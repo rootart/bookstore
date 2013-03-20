@@ -18,7 +18,7 @@
     });
     $('body').keypress(function(e) {
       if (e.keyCode === 27) {
-        return $('$popup-order').hide();
+        return $('#popup-order').hide();
       }
     });
     $('a.book-gallery').fancybox({
