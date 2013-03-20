@@ -203,14 +203,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 @font-face {
-       font-family: 'MIC';
-       src: url('../fonts/MIC.eot');
-       src: url('../fonts/MIC.eot?#iefix') format('embedded-opentype'), 
-	        url('../fonts/MIC.woff') format('woff'), 
-			url('../fonts/MIC.TTF') format('truetype'), 
-			url('../fonts/MIC.svg#MIC') format('svg');
+       font-family: "MIC";
+       src: url("../fonts/MIC.eot");
+       src: url("../fonts/MIC.eot?#iefix") format("embedded-opentype"), 
+	        url("../fonts/MIC.svg") format("svg"),
+	        url("../fonts/MIC.woff") format("woff"), 
+			url("../fonts/MIC.TTF") format("truetype");
        font-weight: normal;
        font-style: normal;
 }
@@ -242,7 +241,7 @@ ul {
 .head {
   position: relative;
   margin: 17px 0 50px 0;
-  font-family: MIC, Sans-serif;
+  /*font-family: MIC, Sans-serif;*/
 }
 .logo {
   display: block;
@@ -263,6 +262,7 @@ ul {
 }
 .head nav a {
   font-size: 1.3em;
+  font-family: MIC, Sans-serif;
   line-height: 1;
   
   display: inline-block;
