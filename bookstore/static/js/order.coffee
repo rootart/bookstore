@@ -2,9 +2,10 @@ $('#order-form').submit (e) ->
   e.preventDefault()
   form_data = $(@).serialize()
   post_url = $(@).attr 'action'
-  $.post post_url,(data) ->
-    alert 'ok'
-    return
+  $.post post_url,form_data,(data) ->
+    if data.message then $('.popup-wrap > div').text data.message
+
+  return
 
 $('#order-form').validate
   onKeyup : true

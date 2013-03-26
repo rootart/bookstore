@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+import json
+
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Product, Category
 from news.models import Post
+from orders.forms import OrderForm
 
 
 def homepage(request):
@@ -63,7 +66,6 @@ ORDER_POPUP_MESSAGE = u"""
 
 @csrf_exempt
 def book_order(request, category_slug, slug):
-    from orders.forms import OrderForm
     from orders.models import OrderItem
     form = OrderForm(request.POST or None)
     try:
@@ -71,12 +73,12 @@ def book_order(request, category_slug, slug):
         product = Product.objects.active().filter(slug=slug, category=category)[0]
     except (Category.DoesNotExist, Product.DoesNotExist):
         raise Http404
-    
     if request.method == "POST" and form.is_valid():
         order = form.save()
         order_item = OrderItem.objects.create(order=order, product=product)
         #TODO, send email
-        return HttpResponse(ORDER_POPUP_MESSAGE)
+        return HttpResponse(json.dumps({'message': ORDER_POPUP_MESSAGE}),
+            mimetype="application/json")
 
     data = {
         'form': form,

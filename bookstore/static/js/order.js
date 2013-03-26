@@ -6,8 +6,10 @@
     e.preventDefault();
     form_data = $(this).serialize();
     post_url = $(this).attr('action');
-    return $.post(post_url, function(data) {
-      alert('ok');
+    $.post(post_url, form_data, function(data) {
+      if (data.message) {
+        return $('.popup-wrap > div').text(data.message);
+      }
     });
   });
 
