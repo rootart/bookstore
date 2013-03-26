@@ -4,6 +4,8 @@ import json
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .models import Product, Category
 from news.models import Post
@@ -76,7 +78,20 @@ def book_order(request, category_slug, slug):
     if request.method == "POST" and form.is_valid():
         order = form.save()
         order_item = OrderItem.objects.create(order=order, product=product)
-        #TODO, send email
+        subject = u"[%s] Новый заказ - %s" % (order.id, product.name)
+        message = u"""
+            Имя: %s
+            Телефон: %s
+            E-Mail: %s
+            Книга: %s
+        """ % (
+            order.full_name,
+            order.phone, order.email,
+            product.name
+        )
+        send_mail(subject, message, settings.DEFAULT_FROM,
+            settings.ORDER_MANAGERS, fail_silently=False)
+
         return HttpResponse(json.dumps({'message': ORDER_POPUP_MESSAGE}),
             mimetype="application/json")
 

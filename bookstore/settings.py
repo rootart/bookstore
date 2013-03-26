@@ -153,3 +153,6 @@ LOGGING = {
         },
     }
 }
+
+ORDER_MANAGERS = ['photoartbook.ua@gmail.com',]
+DEFAULT_FROM = 'photoartbook.ua@gmail.com'
