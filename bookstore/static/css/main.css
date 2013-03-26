@@ -270,7 +270,7 @@ ul {
   
   padding: 8px 10px;
   
-  background: #6f1030;
+  background:  #aa1b5b;
   border-radius: 4px;
   
   text-transform: uppercase;
@@ -315,10 +315,10 @@ ul {
 
 .head nav a:hover,
 .head nav .acttive {
-	background: #aa1b5b;
+	background: #6f1030;
 }
 .category {
-	margin: -16px 0 0 187px;
+	margin: -33px 0 0 187px;
 }
 .category a {
   font-size: 1em;
@@ -329,7 +329,7 @@ ul {
   
   padding: 3px 4px;
   
-  background: #6f1030;
+  background: #aa1b5b;
   border-radius: 4px;
   
   text-transform: uppercase;
@@ -344,7 +344,7 @@ ul {
   right: 0;
   
   padding: 15px 5px;
-  background: url(../img/facebook.png) 11px 5px no-repeat #6f1030;
+  background: url(../img/facebook.png) 11px 5px no-repeat #aa1b5b;
   border-radius: 4px;
   
   margin-left: 7px;
@@ -354,11 +354,11 @@ ul {
 }
 
 .head .menu-space {
-  background: #6f1030;
+  background:  #aa1b5b;
   height: 30px;
-  margin-left: 5px;
+  margin-left: 3px;
   float: left;
-  width: 411px;
+  width: 420px;
   border-radius: 4px;
 }
 
@@ -695,16 +695,7 @@ ul {
 .popup-wrap  div {
 	padding: 40px 30px;
 }
-.popup-wrap:after {
-	position: absolute;
-	content: '';
-	right: 0;
-	bottom: 30px;
-	
-	height: 3px;
-	width: 300px;
-	background: #7D183D;
-}
+
 .popup-wrap p {
 	font-weight: bold;
 	line-height: 1.5;
@@ -726,6 +717,7 @@ ul {
 .order-form input[type="submit"] {
     border: none;
 	font-size: 1em;
+  margin-left: 125px;
 }
 .order-form input[type="text"] {
 	width: 130px;

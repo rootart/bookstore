@@ -3,8 +3,9 @@
 <div>
   <form id="order-form" class="order-form" action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
     {{ form.as_p }}
-	<p class="info">{% trans "Поля, обязательные для заполнения*" %}</p>
-    <p><input class="btn-order" type="submit" value="{% trans "Отправить заказ" %}"></p>
+	<p class="info">{% trans "*Поля, обязательные для заполнения" %}</p>
+  <p style="color: #bbb">Если у Вас возникли дополнительные вопросы, звоните по номеру 050 1457565</p>
+  <p><input class="btn-order" type="submit" value="{% trans "Отправить заказ" %}"></p>
   </form>
   <script type="text/javascript" src="{% static "js/order.js" %}"></script>
 
