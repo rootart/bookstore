@@ -30,12 +30,13 @@
           {% block header %}
               <header class="head cf">
     			  <div class="top">
-    	            <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="187" height="86"></a>
-    	            <nav>
-    	              <a href="{% url catalogue %}">Каталог</a>
-    	              <a href="/about/" class="active">О нас</a>
-    	              <a href="/contacts/">Контакты</a>
-					  <a href="javascript:;" class="search-menu" ><span>Поиск</span>
+    	            <!--<a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="186" height="88"></a>-->
+					 <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.png" %}" alt="photo art book" width="186" height="86"></a>
+    	            <nav class="cf">
+    	              <a class="catalog" href="{% url catalogue %}">Каталог</a>
+    	              <a class="about" href="/about/" class="active">О нас</a>
+    	              <a class="contacts" href="/contacts/">Контакты</a>
+					  <a class="search-menu" href="javascript:;"><span>Поиск</span>
 	    	            <form class="search" action="/search/" method="get" accept-charset="utf-8">
 	    	                <input type="text" name="q" value="" id="q">
 	    	                <input type="submit" value="ok">

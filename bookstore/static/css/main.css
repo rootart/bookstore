@@ -216,7 +216,8 @@ textarea {
    
 body {
   background: #fff;
-  font: 62.5%/1.2 Arial, Sans-serif;
+  font: 62.5%/1.2 Verdana,Arial, Sans-serif;
+  color: #646267;
 }
 
 a {
@@ -225,7 +226,9 @@ a {
 
 hr {
   height: 3px;
-  background: #6f1030;
+  
+  /*background: #6f1030;*/
+  background: #941a4d;
 }
 
 ul {
@@ -238,6 +241,7 @@ ul {
   margin: 0 auto;
   
 }
+/*HEADER*/
 .head {
   position: relative;
   margin: 17px 0 50px 0;
@@ -256,6 +260,7 @@ ul {
 }
 .head nav {
   float: left;
+ 
 }
 .head .top {
 	height: 86px;
@@ -265,12 +270,13 @@ ul {
   font-family: MIC, Sans-serif;
   line-height: 1;
   
-  display: inline-block;
-  vertical-align: middle;
+  float: left;
   
   padding: 8px 10px;
   
-  background:  #aa1b5b;
+  /*background: #aa1b5b;*/
+  background: #941a4d;
+ 
   border-radius: 4px;
   
   text-transform: uppercase;
@@ -278,16 +284,31 @@ ul {
   margin-right: 5px;
   transition: background 1s ease;
 }
-
+.head nav a:hover,
+.head nav .acttive {
+	background: #6f1030;
+}
 .head nav a span,
 .head .search {
   display: inline-block;
   vertical-align: middle;
   height: 13px;
 }
+.head .catalog {
+	width: 79px;
+}
+.head .about {
+	width: 56px;
+}
+.head .contact {
+	width: 97px;
+}
 .head .search {
     display: none;
-	margin-top: -2px;
+	margin-top: -3px;
+}
+.head .search-menu {
+	width: 63px;
 }
 .head input[type="text"] {
     width: 90px;
@@ -305,18 +326,49 @@ ul {
   
   text-transform: uppercase;
   color: #fff;
+  
   background: none;
+  
   border: none;
   padding: 0;
-  margin: 0;
+  margin: -1px 0 0 0;
   height: 16px;
   font-family: MIC, Sans-serif;
 }
-
-.head nav a:hover,
-.head nav .acttive {
-	background: #6f1030;
+.facebook-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  padding: 14px 5px 15px;
+  
+  background: url(../img/facebook.png) 11px 5px no-repeat #941a4d;
+  
+  border-radius: 4px;
+  
+  margin-left: 5px;
+  font-size: 1.3em;
+  line-height: 1;
+  width: 20px;
 }
+
+.head .menu-space {
+  /*background:  #aa1b5b;*/
+  background: #941a4d;
+  
+  height: 29px;
+
+  float: left;
+  width: 433px;
+  border-radius: 4px;
+}
+.head.active .search-menu {
+	width: 203px;
+}
+.head.active .menu-space {
+	width: 294px;
+}
+/*CONTENT*/
 .category {
 	margin: -33px 0 0 187px;
 }
@@ -329,39 +381,15 @@ ul {
   
   padding: 3px 4px;
   
-  background: #aa1b5b;
+  /*background: #aa1b5b;*/
+  background: #941a4d;
+  
   border-radius: 4px;
   
   text-transform: uppercase;
   color: #fff;
   margin-right: 5px;
- 
 }
-
-.facebook-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  
-  padding: 15px 5px;
-  background: url(../img/facebook.png) 11px 5px no-repeat #aa1b5b;
-  border-radius: 4px;
-  
-  margin-left: 7px;
-  font-size: 1.3em;
-  line-height: 1;
-  width: 20px;
-}
-
-.head .menu-space {
-  background:  #aa1b5b;
-  height: 30px;
-  margin-left: 3px;
-  float: left;
-  width: 420px;
-  border-radius: 4px;
-}
-
 .content {
   margin-left: 187px;
 }
@@ -420,7 +448,8 @@ ul {
 }
 .bullets .active, 
 .bullets a:hover {
-    background: #6f1030;
+    /*background: #6f1030;*/
+	background: #941a4d;
 }
 .catalogue {
   padding: 15px 15px 0 15px;

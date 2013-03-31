@@ -1,6 +1,6 @@
 jQuery ->
   $('.search-menu').click (e) ->
-    $('.menu-space').width '279'
+    $('.menu-space').width '293'
     $('.search-menu .search').css('display':'inline-block')
     return
 

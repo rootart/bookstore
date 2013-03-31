@@ -3,7 +3,7 @@
 
   jQuery(function() {
     $('.search-menu').click(function(e) {
-      $('.menu-space').width('279');
+	  $('.head').toggleClass('active');
       $('.search-menu .search').css({
         'display': 'inline-block'
       });
