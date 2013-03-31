@@ -3,10 +3,13 @@
 
   jQuery(function() {
     $('.search-menu').click(function(e) {
-	  $('.head').toggleClass('active');
+	  $('.head').addClass('active');
+    if ($('.head').hasClass('active')){
       $('.search-menu .search').css({
         'display': 'inline-block'
       });
+    }
+
     });
     $('#show-popup').click(function(e) {
       var order_link;

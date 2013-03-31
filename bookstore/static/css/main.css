@@ -282,17 +282,21 @@ ul {
   text-transform: uppercase;
   color: #fff;
   margin-right: 5px;
+
   transition: background 1s ease;
 }
 .head nav a:hover,
 .head nav .acttive {
 	background: #6f1030;
 }
-.head nav a span,
-.head .search {
+.head nav a span {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
+}
+.head .search {
   height: 13px;
+  margin: 0;
+  padding: 0;
 }
 .head .catalog {
 	width: 79px;
@@ -300,29 +304,36 @@ ul {
 .head .about {
 	width: 56px;
 }
-.head .contact {
+.head .contacts {
 	width: 97px;
 }
 .head .search {
     display: none;
-	margin-top: -3px;
+	  margin-top: 0;
+    vertical-align: top;
 }
 .head .search-menu {
 	width: 63px;
 }
 .head input[type="text"] {
     width: 90px;
-    margin:0;
-    padding:1px 5px 1px 5px;
+    margin: 0;
+    height: 13px;
+    padding: 0 5px;
     border-radius: 4px;
     border: none;
     box-shadow: none;
+
+    display: inline-block;
+    vertical-align: top;
 }
 .head input[type=submit] {
   font-size: 1.1em;
+  line-height: 1;
+  height: 13px;
   
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   
   text-transform: uppercase;
   color: #fff;
@@ -332,7 +343,7 @@ ul {
   border: none;
   padding: 0;
   margin: -1px 0 0 0;
-  height: 16px;
+
   font-family: MIC, Sans-serif;
 }
 .facebook-link {
@@ -366,11 +377,11 @@ ul {
 	width: 203px;
 }
 .head.active .menu-space {
-	width: 294px;
+	width: 293px;
 }
 /*CONTENT*/
 .category {
-	margin: -33px 0 0 187px;
+	margin: -36px 0 0 187px;
 }
 .category a {
   font-size: 1em;
@@ -643,7 +654,7 @@ ul {
   
     padding: 8px 10px;
   
-    background: #6f1030;
+    background: #941A4D;
     border-radius: 4px;
   
     text-transform: uppercase;
@@ -715,7 +726,7 @@ ul {
     position: absolute;
     top: 50%;
 	
-	fon-weight: bold;
+	font-weight: bold;
 	font-size: 1.2em;
 	
 	position: absolute;
@@ -729,13 +740,18 @@ ul {
 	font-weight: bold;
 	line-height: 1.5;
 	 margin-bottom: 30px;
+   text-align: center;
 }
-
+.popup-wrap p:first-child {
+  font-family: MIC, Sans-serif;
+}
 .order-form {
-	
+	margin: 30px auto;
+  width: 300px;
 }
 .order-form p {
-	margin-bottom: 10px
+	margin-bottom: 10px;
+  text-align:left;
 }
 .order-form label {
     display: inline-block;
@@ -746,7 +762,10 @@ ul {
 .order-form input[type="submit"] {
     border: none;
 	font-size: 1em;
-  margin-left: 125px;
+
+  display: block;
+  
+    margin: 25px auto 0;
 }
 .order-form input[type="text"] {
 	width: 130px;
