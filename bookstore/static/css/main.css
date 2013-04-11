@@ -237,9 +237,9 @@ ul {
 	list-style-type: none;
 }
 .wrap {
-  width: 1100px;
+  min-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
-  
 }
 /*HEADER*/
 .head {
@@ -260,7 +260,7 @@ ul {
 }
 .head nav {
   float: left;
- 
+  /*width: 395px;*/
 }
 .head .top {
 	height: 86px;
@@ -362,22 +362,30 @@ ul {
   line-height: 1;
   width: 20px;
 }
-
+.head-wrap {
+  position: relative;
+  margin-left: 237px;
+}
 .head .menu-space {
   /*background:  #aa1b5b;*/
   background: #941a4d;
   
   height: 29px;
 
-  float: left;
-  width: 433px;
+  /*float: left;
+  width: 433px;*/
   border-radius: 4px;
+  
+  right: 35px;
+  left: 395px;
+  position: absolute;
 }
 .head.active .search-menu {
 	width: 203px;
 }
 .head.active .menu-space {
-	width: 293px;
+	/*width: 293px;*/
+  left: 535px;
 }
 /*CONTENT*/
 .category {
@@ -445,21 +453,21 @@ ul {
 	text-align: center;
 }
 .bullets a {
-    background: #969696;
+  background: #969696;
 	
-    border-radius: 50px;
+  border-radius: 50px;
 	
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;
-    display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;
+  display: inline-block;
 	vertical-align: middle;
 	
-    height: 10px;
-    margin-right: 2px;
-    width: 10px;
+  height: 10px;
+  margin-right: 2px;
+  width: 10px;
 }
 .bullets .active, 
 .bullets a:hover {
-    /*background: #6f1030;*/
+  /*background: #6f1030;*/
 	background: #941a4d;
 }
 .catalogue {
@@ -470,7 +478,6 @@ ul {
   float: left;
   color: #000;
 }
-
 .catalogue figure {
   float: left;
   margin-right: 14px;
@@ -479,42 +486,48 @@ ul {
   
   width: 135px;
   overflow: hidden;
-}
-.catalogue a:nth-child(6n) figure {
-  margin-right: 0;
   
+  border: 1px solid red;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
+/*.catalogue a:nth-child(8n) figure {
+  margin-right: 0;
+}*/
 .catalogue figure figcaption {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 15px 0 0 0;
+  
+  min-height: 26px;
 }
 .subscribe {
 	margin: 10px 15px 20px;
 	
-    /*background: #6f1030;*/
-	background: #DCDCDC;
+  /*background: #6f1030;*/
+	/*background: #DCDCDC;*/
 	/*background: #F5F5F5;*/
+  background: #941A4D;
 	
-    border-radius: 4px;
+  border-radius: 4px;
 	padding: 8px 10px;
 	
-    display: inline-block;
+  display: inline-block;
 	vertical-align: top;
 }
 .subscribe label {
 	font-family: MIC, Sans-serif;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	color: #fff;
 	text-transform: uppercase;
 	margin-right: 8px;
 	
-    display: inline-block;
-	vertical-align: top;
+  display: inline-block;
+	vertical-align: middle;
 }
 .subscribe input[type="text"] {
 	font-size: 1.1em;
-    line-height: 1;
+  line-height: 1;
 	
 	/*color: #000;*/
 	color: #a7a7a7;
@@ -523,10 +536,26 @@ ul {
 	border-radius: 4px;
 	border: none;
 	
-	padding: 3px 5px;
+	padding: 0 5px;
 	
+  display: inline-block;
+	vertical-align: middle;
+}
+.subscribe input[type="submit"] {
+    background: none;
+    border: none;
+    
+    color: #FFF;
     display: inline-block;
-	vertical-align: top;
+    vertical-align: middle;
+    
+    font-family: MIC,Sans-serif;
+    font-size: 1.3em;
+
+    line-height: 1;
+    margin: -1px 0 0;
+    padding: 0;
+    text-transform: uppercase;   
 }
 .post {
      padding: 20px 15px;	

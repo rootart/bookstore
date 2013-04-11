@@ -32,19 +32,22 @@
     			  <div class="top">
     	            <!--<a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="186" height="88"></a>-->
 					 <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.png" %}" alt="photo art book" width="186" height="86"></a>
-    	            <nav class="cf">
-    	              <a class="catalog" href="{% url catalogue %}">Каталог</a>
-    	              <a class="about" href="/about/" class="active">О нас</a>
-    	              <a class="contacts" href="/contacts/">Контакты</a>
-					  <a class="search-menu" href="javascript:;"><span>Поиск</span>
-	    	            <form class="search" action="/search/" method="get" accept-charset="utf-8">
-	    	                <input type="text" name="q" value="" id="q">
-	    	                <input type="submit" value="ok">
-	    	            </form>
-					  </a>	
-    	            </nav>
-    	            <div class="menu-space"></div>
-    	            <a class="facebook-link" href="http://www.facebook.com/PhotoArtBook"></a>
+           <div class="head-wrap cf">
+              <nav class="cf">
+                <a class="catalog" href="{% url catalogue %}">Каталог</a>
+                <a class="about" href="/about/" class="active">О нас</a>
+                <a class="contacts" href="/contacts/">Контакты</a>
+  		          <a class="search-menu" href="javascript:;"><span>Поиск</span>
+   	            <form class="search" action="/search/" method="get" accept-charset="utf-8">
+   	                <input type="text" name="q" value="" id="q">
+   	                <input type="submit" value="ok">
+   	            </form>
+  		          </a>	
+              </nav>
+              <div class="menu-space"></div>
+              <a class="facebook-link" href="http://www.facebook.com/PhotoArtBook"></a>
+           </div>
+    	            
     		      </div>
           {% block subcategories %}
     			  <div class="category">
