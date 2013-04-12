@@ -222,6 +222,7 @@
      			<form action="" method="get" class="subscribe">
      				<label for="subsribe">подписаться</label>
      				<input type="text" name="" value="" id="subsribe">
+            <input type="submit" value="ok">
      			</form>
        {% endblock subscribe %}
 			
@@ -236,9 +237,9 @@
 					<p>В Киеве мы бесплатно доставляем заказ к любой удобной для Вас станции метро, в регионы - отправляем "Новой почтой".</p>
 		        </div>
 		    </div>
-        {% endblock content %}
-		</div>
         
+		</div>
+{% endblock content %}        
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.9.1.min.js" %}"><\/script>')</script>

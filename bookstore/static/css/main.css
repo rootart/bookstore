@@ -218,6 +218,8 @@ body {
   background: #fff;
   font: 62.5%/1.2 Verdana,Arial, Sans-serif;
   color: #646267;
+  
+  margin: 0 0 0 1%;
 }
 
 a {
@@ -229,6 +231,8 @@ hr {
   
   /*background: #6f1030;*/
   background: #941a4d;
+  
+  margin-left: -22px;
 }
 
 ul {
@@ -238,7 +242,7 @@ ul {
 }
 .wrap {
   min-width: 1100px;
-  max-width: 1400px;
+  max-width: 1425px;
   margin: 0 auto;
 }
 /*HEADER*/
@@ -286,7 +290,7 @@ ul {
   transition: background 1s ease;
 }
 .head nav a:hover,
-.head nav .acttive {
+.head nav .active {
 	background: #6f1030;
 }
 .head nav a span {
@@ -389,7 +393,11 @@ ul {
 }
 /*CONTENT*/
 .category {
-	margin: -36px 0 0 187px;
+	/*margin: -36px 0 0 187px;*/
+  
+  position: absolute;
+  left: 237px;
+  bottom: 19px;
 }
 .category a {
   font-size: 1em;
@@ -434,6 +442,7 @@ ul {
 	width: 360px;
 	
 	line-height: 1.5;
+  color: #646267;
 }
 .main-article header {
 	
@@ -480,7 +489,11 @@ ul {
 }
 .catalogue figure {
   float: left;
-  margin-right: 14px;
+  
+  /*margin-right: 12px;*/
+  margin-right: 16px;
+  
+  
   margin-bottom: 30px;
   text-align: center;
   
@@ -499,6 +512,8 @@ ul {
   margin: 15px 0 0 0;
   
   min-height: 26px;
+  
+  color: #646267;
 }
 .subscribe {
 	margin: 10px 15px 20px;
@@ -552,7 +567,7 @@ ul {
     font-size: 1.3em;
 
     line-height: 1;
-    margin: -1px 0 0;
+    margin: 0;
     padding: 0;
     text-transform: uppercase;   
 }
@@ -601,17 +616,19 @@ ul {
 	padding: 20px 15px;	
 }
 .detail-image {
-	width: 290px;
+	width: 500px;
 	margin-right: 20px;
 	display: inline-block;
 	vertical-align: top;
 }
 .detail-image figure {
-	margin:0 0 15px 0;
+	margin: 0 0 15px 0;
 	text-align: center;
 	
-	width: 290px;
+	width: 500px;
 	overflow: hidden;
+  
+  background: #fff;
 }
 .detail-image img {
 	display: block;
@@ -623,7 +640,10 @@ ul {
 	margin: 0 8px 10px 0;
 	overflow: hidden;
 }
-.detail .detail-images a:nth-child(7n) {
+/*.detail .detail-images a:nth-child(7n) {
+	margin-right: 0;
+}*/
+.detail .detail-images a:nth-child(11n) {
 	margin-right: 0;
 }
 .detail .detail-images img {
@@ -777,7 +797,8 @@ ul {
   font-weight: 100;
   line-height: 1.5;
   
-  font-size: .9em;
+  font-size: .87em;
+  margin: 30px 0 0 0;
 }
 .order-form p {
 	margin-bottom: 10px;
@@ -788,12 +809,16 @@ ul {
 	
 	width: 90px;
   text-align: left;
+  
+  font-weight: 100;
+  font-size: .9em;
+  text-transform: uppercase;
 }
 .order-form input[type="submit"] {
     border: none;
-	font-size: 1em;
+	  font-size: 1em;
 
-  display: block;
+    display: block;
   
     margin: 25px auto 0;
 }

@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load thumbnail i18n staticfiles %}
+<a href="javascript:;" class="fancybox-item fancybox-close" title="Close"></a>  
 <div>
   <p>ПОЖАЛУЙСТА, ЗАПОЛНИТЕ ФОРМУ ЗАКАЗА</p>
   <form id="order-form" class="order-form" action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
