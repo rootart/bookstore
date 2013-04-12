@@ -483,8 +483,8 @@ ul {
   padding: 15px 15px 0 15px;
 }
 .catalogue a {
-  display: block;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   color: #000;
 }
 .catalogue figure {
