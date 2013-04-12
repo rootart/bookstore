@@ -3,3 +3,4 @@
 {{ object.description }}
 {{ object.publisher }}
 {{ object.publish_year }}
+{{ object.author }}
