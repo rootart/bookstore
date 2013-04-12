@@ -72,7 +72,7 @@ CUSTOMER_MESSAGE_PLAIN = u"""
 Спасибо за размещение заказа на нашем сайте. 
 
 Вы заказали: 
-%s
+%s "%s"
 цена %s грн
 
 Заказ находится в процессе обработки. Наши сотрудники свяжутся с Вами в ближайшее время.
@@ -89,11 +89,11 @@ CUSTOMER_MESSAGE_HTML = u"""
 Спасибо за размещение заказа на нашем сайте. <br>
  <br>
 Вы заказали: <br>
-%s <br>
+%s "%s" <br>
 цена %s грн <br>
  <br>
 Заказ находится в процессе обработки. Наши сотрудники свяжутся с Вами в ближайшее время. <br>
-
+<br>
 С уважением, <br>
 команда PhotoArtBook <br>
 
@@ -121,10 +121,11 @@ def book_order(request, category_slug, slug):
             Имя: %s
             Телефон: %s
             E-Mail: %s
-            Книга: %s - %s грн
+            Книга: %s, %s - %s грн
         """ % (
             order.full_name,
             order.phone, order.email,
+            product.author,
             product.name,
             product.price
         )
@@ -134,10 +135,12 @@ def book_order(request, category_slug, slug):
         # send email to customer
         subject, _from, _to = CUSTOMER_SUBJECT, settings.DEFAULT_FROM, order.email
         text_content = CUSTOMER_MESSAGE_PLAIN % (
+            product.author,
             product.name,
             product.price
         )
         html_content = CUSTOMER_MESSAGE_HTML % (
+            product.author,
             product.name,
             product.price
         )
