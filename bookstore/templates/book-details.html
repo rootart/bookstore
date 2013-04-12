@@ -18,7 +18,9 @@
 <div class="detail">
 	<div class="detail-image">
 	  <figure>
-        <img src="{{ product.main_cover_image.url }}" alt="{{ product.name }}">
+        {% thumbnail product.main_cover_image  "500" as im %}
+           <img src="{{ im.url }}" alt="{{ product.name }}">
+        {% endthumbnail %}
 	  </figure>
 
 	  <div class="detail-images">
