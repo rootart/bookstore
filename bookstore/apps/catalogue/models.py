@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -67,8 +68,17 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
+    HARD_BINDING = u"Твердый переплёт"
+    SOFT_BINDING = u"Мягкая обложка"
+    BINDING_TYPES = (
+        ('hard', HARD_BINDING),
+        ('soft', SOFT_BINDING)
+    )
     category = models.ForeignKey(Category,
         verbose_name=_("Category")
+    )
+    author = models.CharField(_("Author"), blank=True, null=True,
+        max_length=255
     )
     name = models.CharField(_("Product name"),
         max_length=255, blank=True, null=True
@@ -85,8 +95,12 @@ class Product(models.Model):
     publish_year = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Publishing year")
     )
-    author = models.CharField(_("Author"), blank=True, null=True,
-        max_length=255
+    binding = models.CharField(blank=True, null=True, max_length=255,
+        verbose_name=_("Binding type"),
+        choices = BINDING_TYPES
+    )
+    pages = models.PositiveIntegerField(blank=True, null=True,
+        verbose_name=_("Number of pages")
     )
     width = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Width"),
@@ -95,12 +109,6 @@ class Product(models.Model):
     height = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Height"),
         help_text=_("in cm")
-    )
-    pages = models.PositiveIntegerField(blank=True, null=True,
-        verbose_name=_("Number of pages")
-    )
-    binding = models.CharField(blank=True, null=True, max_length=255,
-        verbose_name=_("Binding type")
     )
     language = models.ForeignKey(TextLanguage, blank=True, null=True,
         verbose_name=_("Text language")

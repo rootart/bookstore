@@ -31,7 +31,7 @@ class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
         "available", "anticipating", "price", "stock_price")
     list_filter = ("publisher", "publish_year", "available", "anticipating",\
         "language", "created", "modified")
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('author', 'name')}
     inlines = [ProductImageInline,]
 
 
