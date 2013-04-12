@@ -64,7 +64,7 @@ def book_details(request, category_slug, slug):
 
 
 ORDER_POPUP_MESSAGE = u"""
-    Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
+    Спасибо за размещение заказа. Наши специалисты свяжутся с Вами в ближайшее время.
 """
 
 CUSTOMER_SUBJECT = u"""Ваш заказ в PhotoArtBook"""
