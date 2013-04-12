@@ -15,7 +15,7 @@ from orders.forms import OrderForm
 
 
 def homepage(request):
-    products = Product.objects.filter(available=True, show_on_main=True)
+    products = Product.objects.filter(show_on_main=True)
     posts = Post.objects.filter(
         is_published=True,
         show_on_main=True
