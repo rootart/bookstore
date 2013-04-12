@@ -5,6 +5,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+
 from django.conf import settings
 
 from .models import Product, Category
@@ -65,6 +67,42 @@ ORDER_POPUP_MESSAGE = u"""
     Спасибо за размещение заказа. Наши сотрудники свяжутся с Вами в ближайшее время.
 """
 
+CUSTOMER_SUBJECT = u"""Ваш заказ в PhotoArtBook"""
+CUSTOMER_MESSAGE_PLAIN = u"""
+Спасибо за размещение заказа на нашем сайте. 
+
+Вы заказали: 
+%s
+цена %s грн
+
+Заказ находится в процессе обработки. Наши сотрудники свяжутся с Вами в ближайшее время.
+
+С уважением,
+команда PhotoArtBook
+
+
+photoartbook.com.ua
+050 1457565
+"""
+
+CUSTOMER_MESSAGE_HTML = u"""
+Спасибо за размещение заказа на нашем сайте. <br>
+ <br>
+Вы заказали: <br>
+%s <br>
+цена %s грн <br>
+ <br>
+Заказ находится в процессе обработки. Наши сотрудники свяжутся с Вами в ближайшее время. <br>
+
+С уважением, <br>
+команда PhotoArtBook <br>
+
+ <br> <br>
+<img src="http://88.198.31.45:9111/static/img/logo.png"><br>
+<a href="http://photoartbook.com.ua/">photoartbook.com.ua</a><br>
+050 1457565 <br>
+"""
+
 
 @csrf_exempt
 def book_order(request, category_slug, slug):
@@ -83,14 +121,29 @@ def book_order(request, category_slug, slug):
             Имя: %s
             Телефон: %s
             E-Mail: %s
-            Книга: %s
+            Книга: %s - %s грн
         """ % (
             order.full_name,
             order.phone, order.email,
-            product.name
+            product.name,
+            product.price
         )
         send_mail(subject, message, settings.DEFAULT_FROM,
             settings.ORDER_MANAGERS, fail_silently=False)
+
+        # send email to customer
+        subject, _from, _to = CUSTOMER_SUBJECT, settings.DEFAULT_FROM, order.email
+        text_content = CUSTOMER_MESSAGE_PLAIN % (
+            product.name,
+            product.price
+        )
+        html_content = CUSTOMER_MESSAGE_HTML % (
+            product.name,
+            product.price
+        )
+        msg = EmailMultiAlternatives(subject, text_content, _from, [_to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
 
         return HttpResponse(json.dumps({'message': ORDER_POPUP_MESSAGE}),
             mimetype="application/json")
