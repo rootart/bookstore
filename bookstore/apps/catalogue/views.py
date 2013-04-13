@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 import json
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404, HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 from django.conf import settings
 
@@ -44,6 +46,7 @@ def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = Product.objects.active().filter(category=category)
     data = {
+        'categories': Category.objects.all(),
         'category': category,
         'products': products
     }
@@ -178,14 +181,19 @@ def subscribe_email(request):
     if request.method == "POST":
         email = request.POST.get('email', None)
         if email:
-            _subscribe, created = Subscription.objects.get_or_create(email=email)
+            try:
+                validate_email( email )
+            except ValidationError:
+                message = u"""Вы ввели неверный email."""
+            else:
+                _subscribe, created = Subscription.objects.get_or_create(email=email)
 
-        if created:
-            message = u"""Спасибо. Ваш адрес добавлен в подписку."""
-        else:
-            message = u"""Ваш email уже есть в подписке."""
+                if created:
+                    message = u"""Спасибо. Ваш адрес добавлен в подписку."""
+                else:
+                    message = u"""Ваш email уже есть в подписке."""
         data = {'message': message}
-        return HttpResponse(json.dumps(data), mimetype="application/javascript")
+        return render(request, 'subscribe-page.html', data)
     else:
-        return HttpResponseForbidden()
+        return redirect('/')
         

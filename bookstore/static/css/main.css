@@ -417,6 +417,12 @@ ul {
   color: #fff;
   margin-right: 5px;
 }
+
+.category a.active {
+  background: none repeat scroll 0 0 #6F1030;
+
+}
+
 .content {
   margin-left: 187px;
 }
@@ -543,8 +549,8 @@ ul {
 	font-size: 1.1em;
   line-height: 1;
 	
-	/*color: #000;*/
-	color: #a7a7a7;
+  color: #000;
+/*  color: #a7a7a7;*/
 	
 	background: #fff;
 	border-radius: 4px;
@@ -833,4 +839,17 @@ ul {
     box-shadow: none;
     margin: 0;
     padding: 3px 5px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #000;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #000;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #000;
 }
