@@ -4,7 +4,9 @@
 <div>
   <p>ПОЖАЛУЙСТА, ЗАПОЛНИТЕ ФОРМУ ЗАКАЗА</p>
   <form id="order-form" class="order-form" action="{% url book-order product.category.slug product.slug %}" method="post" accept-charset="utf-8">{% csrf_token %}
-    {{ form.as_p }}
+    <p><label for="id_full_name">ИМЯ</label>{{ form.full_name }}</p>
+    <p><label for="id_email">E-MAIL</label>{{ form.email }}</p>
+    <p><label for="id_email">Телефон</label>{{ form.phone }}</p>
   <p><input class="btn-order" type="submit" value="{% trans "Отправить заказ" %}"></p>
   </form>
 	<p class="info">ЕСЛИ У ВАС ВОЗНИКЛИ ДОПОЛНИТЕЛЬНЫЕ ВОПРОСЫ, ЗВОНИТЕ 050 1457565</p>

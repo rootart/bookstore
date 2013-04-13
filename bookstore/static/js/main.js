@@ -39,6 +39,11 @@
       $('.bullets a').removeClass('active');
       clicked_bullet.addClass('active');
     });
+    
+    $('.subscribe').submit(function(){
+      data = $('.subscribe');
+      return false;
+    });
   });
 
 }).call(this);
