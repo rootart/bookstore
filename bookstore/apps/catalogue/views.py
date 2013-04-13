@@ -2,7 +2,7 @@
 import json
 
 from django.shortcuts import render, get_object_or_404
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
@@ -11,6 +11,7 @@ from django.conf import settings
 
 from .models import Product, Category
 from news.models import Post
+from subscription.models import Subscription
 from orders.forms import OrderForm
 
 
@@ -166,8 +167,25 @@ def search(request):
 
 def post_details(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    
     data = {
         'post': post
     }
     return render(request, 'post-details.html', data)
+
+
+@csrf_exempt
+def subscribe_email(request):
+    if request.method == "POST":
+        email = request.POST.get('email', None)
+        if email:
+            _subscribe, created = Subscription.objects.get_or_create(email=email)
+
+        if created:
+            message = u"""Спасибо. Ваш адрес добавлен в подписку."""
+        else:
+            message = u"""Ваш email уже есть в подписке."""
+        data = {'message': message}
+        return HttpResponse(json.dumps(data), mimetype="application/javascript")
+    else:
+        return HttpResponseForbidden()
+        
