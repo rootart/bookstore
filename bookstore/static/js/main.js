@@ -39,6 +39,13 @@
       $('.bullets a').removeClass('active');
       clicked_bullet.addClass('active');
     });
+    $('#book-details-content').expander({
+        slicePoint:       300,  // default is 100
+        expandPrefix:     ' ', // default is '... '
+        expandText:       'подробнее', // default is 'read more'
+        collapseTimer:    0,
+        userCollapseText: 'скрыть'  // default is 'read less'
+      });
   });
 
 }).call(this);

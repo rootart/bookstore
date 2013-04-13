@@ -12,6 +12,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 <script type="text/javascript" src="{% static "js/vendor/jquery.mousewheel-3.0.6.pack.js" %}"></script>
 <script type="text/javascript" src="{% static "js/jquery-validate.js" %}"></script>
+<script type="text/javascript" src="{% static "js/jquery.expander.js" %}"></script>
 {% endblock extra_js %}
 
 {% block content %}
@@ -41,7 +42,7 @@
             {{ product.author }}<br>
             {{ product.name }}
           </header>
-          <p class="desc">{{ product.description|linebreaksbr|truncatewords:"60" }}</p>
+          <p id="book-details-content" class="desc">{{ product.description|linebreaksbr }}</p>
 	  <ul class="detail-list">
 		  {% if product.publisher %}<li>Издательство: {{ product.publisher.name }}</li>{% endif %}
 		  {% if product.publish_year %}<li>Год издания: {{ product.publish_year }}</li>{% endif %}
