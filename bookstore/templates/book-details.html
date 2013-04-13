@@ -47,7 +47,7 @@
 		  {% if product.publish_year %}<li>Год издания: {{ product.publish_year }}</li>{% endif %}
       {% if product.binding %}<li>{{ product.binding }}</li>{% endif %}
 		  {% if product.pages %}<li>страницы: {{ product.pages }}</li>{% endif %}
-		  {% if product.width and product.height %}<li>размер: {{ product.width }}x{{ product.height }}</li>{% endif %}
+		  {% if product.width and product.height %}<li>размер: {{ product.width }}x{{ product.height }} {% if product.units %}{{ product.units }}{% endif %}</li>{% endif %}
 		  {% if product.language %}<li>язык текста: {{ product.language.language }}</li>{% endif %}
 	  </ul>
 	  <p class="price">Цена: {{ product.price }} грн.</p>

@@ -103,12 +103,15 @@ class Product(models.Model):
         verbose_name=_("Number of pages")
     )
     width = models.PositiveIntegerField(blank=True, null=True,
-        verbose_name=_("Width"),
-        help_text=_("in cm")
+        verbose_name=_("Width")
     )
     height = models.PositiveIntegerField(blank=True, null=True,
-        verbose_name=_("Height"),
-        help_text=_("in cm")
+        verbose_name=_("Height")
+    )
+    units = models.CharField(blank=True, null=True,
+        max_length=255,
+        verbose_name=_("Units"),
+        help_text=_("Units for width and height")
     )
     language = models.ForeignKey(TextLanguage, blank=True, null=True,
         verbose_name=_("Text language")
