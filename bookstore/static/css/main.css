@@ -521,6 +521,10 @@ ul {
   
   color: #646267;
 }
+
+.catalogue figure figcaption b {
+  font-weight: normal;
+}
 .subscribe {
 	margin: 10px 15px 20px;
 	
@@ -668,9 +672,13 @@ ul {
 .detail .title {
 	font-weight: bold;
 	font-size: 1.4em;
-	margin: 15px 0 30px;
+	margin: -6px 0 30px;
 	
 	width: 300px;
+}
+
+.detail .title b {
+	font-weight: normal;
 }
 .detail .desc {
 	font-weight: 100;

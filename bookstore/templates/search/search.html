@@ -18,7 +18,7 @@
                 {% thumbnail product.object.catalogue_image "145x145" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
                 {% endthumbnail %}
-                <figcaption>{{ product.object.author }} <br>{{ product.object.name }}</figcaption>
+                <figcaption><b>{{ product.object.author }}</b> <br>{{ product.object.name }}</figcaption>
               </figure>
   	   </a>
   {% endfor %}
@@ -26,10 +26,6 @@
 </div>
 
 <hr>
-<form action="" method="get" class="subscribe">
-	<label for="subsribe">подписаться</label>
-	<input type="text" name="" value="" id="subsribe">
-  <input type="submit" value="ok">
-</form>
+{% include "subscribe.html" %}
 
 {% endblock content %}
