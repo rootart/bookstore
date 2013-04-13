@@ -50,7 +50,7 @@
 		  {% if product.width and product.height %}<li>размер: {{ product.width }}x{{ product.height }} {% if product.units %}{{ product.units }}{% endif %}</li>{% endif %}
 		  {% if product.language %}<li>язык текста: {{ product.language.language }}</li>{% endif %}
 	  </ul>
-	  <p class="price">Цена: {{ product.price }} грн.</p>
+	  <p class="price">Цена: {{ product.price|floatformat:"-2" }} грн.</p>
 	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается{% endif %}</p>
 	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available and not product.anticipating %}купить{% elif product.anticipating %}заказать{% endif %}</a>
 	  <div class="tags">
