@@ -28,4 +28,8 @@
     }
   });
 
+  $('.popup-container .fancybox-item.fancybox-close').click(function(e) {
+    return $('.popup-container').hide();
+  });
+
 }).call(this);

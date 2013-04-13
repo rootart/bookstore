@@ -18,5 +18,6 @@ $('#order-form').validate
     $(@).css
       'border': '1px solid red'
 
-
+$('.popup-container .fancybox-item.fancybox-close').click (e) ->
+  $('.popup-container').hide()
     
