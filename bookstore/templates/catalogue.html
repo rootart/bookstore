@@ -15,7 +15,7 @@
   {% for product in products %}
   		<a href="{% url book-details product.category.slug product.slug %}" class=""> 
               <figure>
-                {% thumbnail product.catalogue_image "145x145" crop="center" as im %}
+                {% thumbnail product.catalogue_image "150x150" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
                 {% endthumbnail %}
                 <figcaption><b>{{ product.author }}</b> <br>{{ product.name }}</figcaption>
