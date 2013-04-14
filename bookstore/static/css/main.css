@@ -551,10 +551,9 @@ ul {
 }
 .subscribe input[type="text"] {
 	font-size: 1.1em;
-  line-height: 1;
 	
   color: #000;
-/*  color: #a7a7a7;*/
+/*color: #a7a7a7;*/
 	
 	background: #fff;
 	border-radius: 4px;
@@ -592,7 +591,9 @@ ul {
 .post article {
 	display: inline-block;
 	vertical-align: top;
-	width: 590px;
+	
+  width: 590px;
+  min-height: 280px;
 	
 	line-height: 1.5;
 }
