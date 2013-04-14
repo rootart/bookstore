@@ -259,7 +259,7 @@ ul {
 }
 .logo img {
 	overflow: hidden;
-	width: 187px;
+	width: 186px;
 	height: 86px;
 }
 .head nav {
@@ -422,13 +422,13 @@ ul {
   background: none repeat scroll 0 0 #6F1030;
 
 }
-
+/*CONTENT*/
 .content {
-  margin-left: 187px;
+  margin-left: 186px;
 }
 .main-article ul li {
 	display: none;
-	padding: 0 15px;
+	padding: 0 15px 0 0;
 }
 .main-article ul .active {
 	display: block;
@@ -486,7 +486,7 @@ ul {
 	background: #941a4d;
 }
 .catalogue {
-  padding: 15px 15px 0 15px;
+  padding: 15px 15px 0 0;
 }
 .catalogue a {
   display: inline-block;

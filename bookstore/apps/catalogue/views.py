@@ -180,6 +180,7 @@ def post_details(request, slug):
 def subscribe_email(request):
     if request.method == "POST":
         email = request.POST.get('email', None)
+        message = u"""Вы ввели неверный email."""
         if email:
             try:
                 validate_email( email )
