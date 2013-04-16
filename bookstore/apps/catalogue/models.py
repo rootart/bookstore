@@ -83,8 +83,14 @@ class Product(models.Model):
     name = models.CharField(_("Product name"),
         max_length=255, blank=True, null=True
     )
+    catalogue_name = models.CharField(_("Catalogue product name"),
+        max_length=255, blank=True, null=True
+    )
     slug = models.SlugField(max_length=255, unique=True,
         verbose_name=_("Product slug")
+    )
+    short_description = models.TextField(_('Short description'),
+        blank=True, null=True
     )
     description = models.TextField(_("Description"),
         blank=True, null=True
@@ -118,6 +124,7 @@ class Product(models.Model):
     )
     available = models.BooleanField(verbose_name=_("Is available"))
     anticipating = models.BooleanField(verbose_name=_("Anticipating product"))
+    not_available = models.BooleanField(verbose_name=_("Not available"))
     tags = models.ManyToManyField(Tags, blank=True, null=True,
         verbose_name=_("Tags")
     )

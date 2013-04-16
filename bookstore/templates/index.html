@@ -38,7 +38,7 @@
                         {% thumbnail product.catalogue_image "145x145" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
                         {% endthumbnail %}
-                        <figcaption><b>{{ product.author }}</b> <br>{{ product.name }}</figcaption>
+                        <figcaption>{% if product.author %}<b>{{ product.author }}</b><br>{% endif %}{{ product.catalogue_name|default:"" }}</figcaption>
                       </figure>
           	   </a>
           {% endfor %}

@@ -1,5 +1,7 @@
 {{ object.name }}
 {{ object.category.name }}
+{{ object.catalogue_name }}
+{{ object.short_description }}
 {{ object.description }}
 {{ object.publisher }}
 {{ object.publish_year }}
