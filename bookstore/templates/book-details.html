@@ -44,16 +44,16 @@
           </header>
           <p id="book-details-content" class="desc">{{ product.description|linebreaksbr }}</p>
 	  <ul class="detail-list">
-		  {% if product.publisher %}<li>Издательство: {{ product.publisher.name }}</li>{% endif %}
+		  {% if product.publisher %}<li>Издатель: {{ product.publisher.name }}</li>{% endif %}
 		  {% if product.publish_year %}<li>Год издания: {{ product.publish_year }}</li>{% endif %}
-      {% if product.binding %}<li>{{ product.binding }}</li>{% endif %}
-		  {% if product.pages %}<li>страницы: {{ product.pages }}</li>{% endif %}
-		  {% if product.width and product.height %}<li>размер: {{ product.width }}x{{ product.height }} {% if product.units %}{{ product.units }}{% endif %}</li>{% endif %}
-		  {% if product.language %}<li>язык текста: {{ product.language.language }}</li>{% endif %}
+      {% if product.binding %}<li>Тип обложки: {{ product.binding }}</li>{% endif %}
+		  {% if product.pages %}<li>Количество страниц: {{ product.pages }}</li>{% endif %}
+		  {% if product.width and product.height %}<li>Размер книги: {{ product.width }} x {{ product.height }} {% if product.units %}{{ product.units }}{% endif %}</li>{% endif %}
+		  {% if product.language %}<li>Язык текста: {{ product.language.language }}</li>{% endif %}
 	  </ul>
 	  <p class="price">Цена: {{ product.price|floatformat:"-2" }} грн.</p>
-	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается{% endif %}</p>
-	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available and not product.anticipating %}купить{% elif product.anticipating %}заказать{% endif %}</a>
+	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается поступление{% else %}временно отсутствует{% endif %}</p>
+	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available %}купить{% else %}заказать{% endif %}</a>
 	  <div class="tags">
 		  <header>{% trans "теги" %}:</header>
       {% for tag in product.tags.all %}
