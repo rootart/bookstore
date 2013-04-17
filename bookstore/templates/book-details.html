@@ -23,7 +23,7 @@
         {% endthumbnail %}
 	  </figure>
 
-	  <div class="detail-images">
+	  <div class="detail-images cf">
       {% for image in product.productimage_set.all %}
         {% thumbnail image.image "32x32" crop="center" as im %}
             <a  rel="group" class="book-gallery" href="{{ image.image.url }}"><img src="{{ im.url }}"  width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}"></a>

@@ -645,15 +645,14 @@ ul {
 	margin: auto;	
 }
 .detail .detail-images a {
-	display: inline-block;
-	vertical-align: top;
-	margin: 0 8px 10px 0;
+  float: left;
+	margin: 0 12.5px 10px 0;
 	overflow: hidden;
 }
 /*.detail .detail-images a:nth-child(7n) {
 	margin-right: 0;
 }*/
-.detail .detail-images a:nth-child(11n) {
+.detail .detail-images a:nth-child(7n) {
 	margin-right: 0;
 }
 .detail .detail-images img {
