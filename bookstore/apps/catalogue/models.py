@@ -167,7 +167,7 @@ class Product(models.Model):
         ordering = ("-modified",)
 
     def __unicode__(self):
-        return self.name
+        return self.name or self.author
 
 
 class ProductImage(models.Model):
