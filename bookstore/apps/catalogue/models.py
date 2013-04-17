@@ -33,6 +33,7 @@ class TextLanguage(models.Model):
     class Meta:
         verbose_name = _("Text language")
         verbose_name_plural = _("Text languages")
+        ordering = ('language',)
 
     def __unicode__(self):
         return self.language
@@ -44,6 +45,7 @@ class Publisher(models.Model):
     class Meta:
         verbose_name = _("Publisher")
         verbose_name_plural = _("Publishers")
+        ordering = ('name',)
 
     def __unicode__(self):
         return self.name
