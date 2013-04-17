@@ -2,6 +2,7 @@
 (function() {
 
   jQuery(function() {
+    $('#subsribe').placeholder();
     $('.search-menu').click(function(e) {
 	  $('.head').addClass('active');
     if ($('.head').hasClass('active')){
