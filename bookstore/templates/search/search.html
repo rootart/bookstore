@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<div class="catalogue cf">
+<div class="catalogue cf search-results">
   {% for product in page.object_list %}
   		<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
               <figure>

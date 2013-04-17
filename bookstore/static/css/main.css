@@ -526,7 +526,7 @@ ul {
   font-weight: normal;
 }
 .subscribe {
-	margin: 10px 15px 20px;
+	margin: 10px 15px 20px 0px;
 	
   /*background: #6f1030;*/
 	/*background: #DCDCDC;*/
@@ -551,8 +551,8 @@ ul {
 }
 .subscribe input[type="text"] {
 	font-size: 1.1em;
-	
-  color: color: #646267;
+	font-family: Verdana, sans-serif;
+  color: #646267;
 	
 	background: #fff;
 	border-radius: 4px;
@@ -592,7 +592,7 @@ ul {
 	vertical-align: top;
 	
   width: 590px;
-  min-height: 280px;
+  min-height: 380px;
 	
 	line-height: 1.5;
 }
@@ -850,19 +850,29 @@ ul {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #000;
+    color:    #646267;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #000;
+    color:    #646267;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #000;
+    color:    #646267;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #000;
+    color:    #646267;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #646267;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #646267;
 }
 a.collapse {
   font-style: italic;
   font-weight: bold;
   color: #6f1030;
+}
+
+.search-results {
+  min-height: 380px;
 }
