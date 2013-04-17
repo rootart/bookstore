@@ -219,7 +219,7 @@ body {
   font: 62.5%/1.2 Verdana,Arial, Sans-serif;
   color: #646267;
   
-  margin: 0 0 0 1%;
+  margin: 0 3px 0 1%;
 }
 
 a {
@@ -497,7 +497,7 @@ ul {
   float: left;
   
   /*margin-right: 12px;*/
-  margin-right: 20px;
+  margin-right: 17px;
   
   
   margin-bottom: 30px;
