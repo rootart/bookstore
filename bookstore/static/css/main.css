@@ -552,8 +552,7 @@ ul {
 .subscribe input[type="text"] {
 	font-size: 1.1em;
 	
-  color: #000;
-/*color: #a7a7a7;*/
+  color: color: #646267;
 	
 	background: #fff;
 	border-radius: 4px;
@@ -861,4 +860,9 @@ ul {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #000;
+}
+a.collapse {
+  font-style: italic;
+  font-weight: bold;
+  color: #6f1030;
 }
