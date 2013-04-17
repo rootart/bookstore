@@ -39,6 +39,21 @@
       $('.bullets a').removeClass('active');
       clicked_bullet.addClass('active');
     });
+
+    // Show detailed content
+    var detailed_content = $('.detailed-description');
+    detailed_content.hide();
+    $('*[data-description-show]').click(function(e){
+      var _this = $(e.target);
+      _this.parent().next('.detailed-description').show();
+      _this.hide();
+    });
+
+    $('*[data-description-hide]').click(function(e){
+      var _this = $(e.target);
+      _this.parent().hide();
+      $('*[data-description-show]').show();
+    });
   });
 
 }).call(this);
