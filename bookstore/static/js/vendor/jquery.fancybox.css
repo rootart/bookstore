@@ -101,10 +101,34 @@
 	position: absolute;
 	top: -18px;
 	right: -18px;
-	width: 36px;
-	height: 36px;
-	cursor: pointer;
+	
+  /*width: 36px;
+	height: 36px;*/
+	
+  cursor: pointer;
 	z-index: 8040;
+  
+  background-image: none;
+  background-color: #646267;
+  
+  border-radius: 50%;
+  box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);
+  border: 3px solid #fff;
+  
+  width: 26px;
+  height: 26px;
+}
+.fancybox-close:after {
+  position: absolute;
+  content: 'x';
+  left: 32%;
+  top: 17%;
+  
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  
 }
 
 .fancybox-nav {
