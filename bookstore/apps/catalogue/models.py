@@ -70,8 +70,8 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    HARD_BINDING = u"Твердый переплёт"
-    SOFT_BINDING = u"Мягкая обложка"
+    HARD_BINDING = u"твердый переплёт"
+    SOFT_BINDING = u"мягкая обложка"
     BINDING_TYPES = (
         ('hard', HARD_BINDING),
         ('soft', SOFT_BINDING)
