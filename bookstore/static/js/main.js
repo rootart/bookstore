@@ -27,7 +27,8 @@
     });
     $('a.book-gallery').fancybox({
       'autoHeight': true,
-      'autoWidth': true
+      'autoWidth': true,
+      'padding': 8
     });
     $('.bullets a').click(function(e) {
       var bullet_id, clicked_bullet, sel;

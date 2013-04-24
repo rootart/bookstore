@@ -232,7 +232,8 @@ hr {
   /*background: #6f1030;*/
   background: #941a4d;
   
-  margin-left: -22px;
+/*  margin-left: -22px;*/
+  margin-left: 0;
 }
 
 ul {
@@ -486,7 +487,7 @@ ul {
 	background: #941a4d;
 }
 .catalogue {
-  padding: 15px 15px 0 0;
+  padding: 0px 15px 0 0;
 }
 .catalogue a {
   display: inline-block;
@@ -526,7 +527,7 @@ ul {
   font-weight: normal;
 }
 .subscribe {
-	margin: 10px 15px 20px 0px;
+	margin: 10px 15px 20px 51px;
 	
   /*background: #6f1030;*/
 	/*background: #DCDCDC;*/
@@ -580,7 +581,7 @@ ul {
     text-transform: uppercase;   
 }
 .post {
-     padding: 20px 15px;	
+     padding: 0px 15px 20px;	
 }
 .post img {
 	display: inline-block;
@@ -599,7 +600,7 @@ ul {
 .post header {
 	font-weight: bold;
 	font-size: 1.4em;
-	margin: 15px 0 10px;
+	margin: 0px 0 10px 0px;
 }
 .post p {
 	font-weight: 100;
@@ -623,7 +624,7 @@ ul {
     margin-right: 5px;
 }
 .detail {
-	padding: 20px 15px;	
+	padding: 0px 15px 20px;	
 }
 .detail-image {
 	width: 300px;

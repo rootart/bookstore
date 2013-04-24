@@ -99,8 +99,8 @@
 
 .fancybox-close {
 	position: absolute;
-	top: -18px;
-	right: -18px;
+	top: -13px;
+	right: -13px;
 	
   /*width: 36px;
 	height: 36px;*/
@@ -115,17 +115,17 @@
   box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);
   border: 3px solid #fff;
   
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
 }
 .fancybox-close:after {
   position: absolute;
   content: 'x';
-  left: 32%;
-  top: 17%;
+  left: 28%;
+  top: 12%;
   
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1;
 }
