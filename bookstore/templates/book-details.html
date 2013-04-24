@@ -12,6 +12,17 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 <script type="text/javascript" src="{% static "js/vendor/jquery.mousewheel-3.0.6.pack.js" %}"></script>
 <script type="text/javascript" src="{% static "js/jquery-validate.js" %}"></script>
+
+<script type="text/javascript" charset="utf-8">
+$('document').ready(function(){
+  $('img[data-cover]').fancybox({
+    'autoHeight': true,
+    'autoWidth': true,
+    'padding': 8,
+    'href': {% thumbnail product.main_cover_image  "300" as im %}"{{ im.url }}"{% endthumbnail %}
+  });
+});
+</script>
 {% endblock extra_js %}
 
 {% block content %}
@@ -19,7 +30,7 @@
 	<div class="detail-image">
 	  <figure>
         {% thumbnail product.main_cover_image  "300" as im %}
-           <img src="{{ im.url }}" alt="{{ product.name }}">
+           <img data-cover src="{{ im.url }}" alt="{{ product.name }}">
         {% endthumbnail %}
 	  </figure>
 
@@ -72,5 +83,6 @@
           
         </div>
  </div>
+
         
 {% endblock content %}
