@@ -45,7 +45,7 @@
 	  <ul class="detail-list">
 		  {% if product.publisher %}<li>издатель: {{ product.publisher.name }}</li>{% endif %}
 		  {% if product.publish_year %}<li>год издания: {{ product.publish_year }}</li>{% endif %}
-      {% if product.binding %}<li>тип обложки: {{ product.binding }}</li>{% endif %}
+      {% if product.binding %}<li>тип обложки: {{ product.get_binding_display }}</li>{% endif %}
 		  {% if product.pages %}<li>количество страниц: {{ product.pages }}</li>{% endif %}
 		  {% if product.width and product.height %}<li>размер книги: {{ product.width }} x {{ product.height }} {% if product.units %}{{ product.units }}{% endif %}</li>{% endif %}
 		  {% if product.language %}<li>язык текста: {{ product.language.language }}</li>{% endif %}
