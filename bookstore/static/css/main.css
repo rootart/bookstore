@@ -883,3 +883,6 @@ a.collapse {
 .search-results {
   min-height: 380px;
 }
+.desc + .detailed-description {
+  margin-top: -10px;
+}
