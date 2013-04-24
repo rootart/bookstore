@@ -877,6 +877,11 @@ ul {
 a.collapse {
   font-style: italic;
   font-weight: bold;
+  color: #646267;
+}
+a.collapse:hover {
+  font-style: italic;
+  font-weight: bold;
   color: #6f1030;
 }
 
