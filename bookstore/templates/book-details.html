@@ -19,6 +19,7 @@ $('document').ready(function(){
     'autoHeight': true,
     'autoWidth': true,
     'padding': 8,
+    'showCloseButton': false,
     'href': {% thumbnail product.main_cover_image  "300" as im %}"{{ im.url }}"{% endthumbnail %}
   });
 });
