@@ -1,13 +1,22 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% block subcategories %}{% endblock subcategories %}
 
 {% block content %}
 <div class="post">
+  {{ settings }}
+  {% if request.path == '/about/' %}
+    {% thumbnail about_us_image "x266" crop="center" as im %}
+      <img src="{{ im.url }}">
+  {% endthumbnail %}
+  {% endif %}
    <article>
-          <header>
-            {{ flatpage.title }}
-          </header>
+     {% if flatpage.title %}
+     <header>
+       {{ flatpage.title }}
+     </header>
+     {% endif %}
           <p>{{ flatpage.content|linebreaksbr }}</p>
        </article>
  </div>

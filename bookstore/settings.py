@@ -83,7 +83,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
+    'catalogue.context_processors.defaults'
 )
+
+ABOUT_US_DEFAULT_IMAGE = os.path.join(MEDIA_ROOT, 'about_us.JPG')
 
 FIXTURE_DIRS = (
     os.path.join(PROJECT_DIR, 'fixtures'),
