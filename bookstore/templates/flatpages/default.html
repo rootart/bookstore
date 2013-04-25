@@ -17,7 +17,7 @@
        {{ flatpage.title }}
      </header>
      {% endif %}
-          <p>{{ flatpage.content|linebreaksbr }}</p>
+          <p {% if request.path == '/about/' %}style="margin: -5px 0 0 0;"{% endif %}>{{ flatpage.content|linebreaksbr }}</p>
        </article>
  </div>
  
