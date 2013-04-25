@@ -11,6 +11,11 @@
 
 {% block content %}
 
+{% if not page.object_list %}
+<div class="post">
+   <article style="margin-left: 36px;"><p>Нет результатов по вашему запросу.</p></article>
+ </div>
+{% else %}
 <div class="catalogue cf search-results">
   {% for product in page.object_list %}
   		<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
@@ -22,8 +27,8 @@
               </figure>
   	   </a>
   {% endfor %}
-  {% if not page.object_list %}Нет результатов по вашему запросу.{% endif %}
 </div>
+{% endif %}
 
 <hr>
 {% include "subscribe.html" %}

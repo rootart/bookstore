@@ -19,10 +19,16 @@ $('document').ready(function(){
     'autoHeight': true,
     'autoWidth': true,
     'padding': 8,
-    'showCloseButton': false,
+    'closeBtn': false,
+    'transitionIn': 'elastic',
+    'transitionOut': 'elastic',
+    'openEffect'  : 'elastic',
+    
     'href': {% thumbnail product.main_cover_image  "300" as im %}"{{ im.url }}"{% endthumbnail %}
   });
+  
 });
+
 </script>
 {% endblock extra_js %}
 

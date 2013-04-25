@@ -11,7 +11,7 @@
       <img src="{{ im.url }}">
   {% endthumbnail %}
   {% endif %}
-   <article>
+   <article {% if request.path == '/contacts/' %}style="margin-left: 36px;"{% endif %}>
      {% if flatpage.title != " " %}
      <header>
        {{ flatpage.title }}
