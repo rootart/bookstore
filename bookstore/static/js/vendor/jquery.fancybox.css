@@ -98,36 +98,28 @@
 }
 
 .fancybox-close {
-	position: absolute;
-	top: -13px;
-	right: -13px;
-	
-  /*width: 36px;
-	height: 36px;*/
-	
-  cursor: pointer;
-	z-index: 8040;
-  
-  background-image: none;
-  background-color: #646267;
-  
-  border-radius: 50%;
-  box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);
-  border: 3px solid #fff;
-  
-  width: 22px;
-  height: 22px;
+    background-color: #646267;
+    background-image: none;
+    border: 3px solid #FFFFFF;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    height: 17px;
+    position: absolute;
+    right: -11px;
+    top: -9px;
+    width: 17px;
+    z-index: 8040;
 }
 .fancybox-close:after {
-  position: absolute;
-  content: 'x';
-  left: 28%;
-  top: 12%;
-  
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1;
+    color: #FFFFFF;
+    content: "x";
+    font-size: 12px;
+    font-weight: bold;
+    left: 26%;
+    line-height: 1;
+    position: absolute;
+    top: 3%;
 }
 
 .fancybox-nav {
