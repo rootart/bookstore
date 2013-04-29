@@ -12,11 +12,6 @@
   {% endthumbnail %}
   {% endif %}
    <article {% if request.path == '/contacts/' %}style="margin-left: 36px;"{% endif %}>
-     {% if flatpage.title != " " %}
-     <header>
-       {{ flatpage.title }}
-     </header>
-     {% endif %}
           <p {% if request.path == '/about/' %}style="margin: -5px 0 0 0;"{% endif %}>{{ flatpage.content|linebreaksbr }}</p>
        </article>
  </div>
