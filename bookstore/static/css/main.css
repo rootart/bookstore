@@ -209,7 +209,7 @@ textarea {
        src: url("../fonts/MIC.eot?#iefix") format("embedded-opentype"), 
 	        url("../fonts/MIC.svg") format("svg"),
 	        url("../fonts/MIC.woff") format("woff"), 
-			url("../fonts/MIC.TTF") format("truetype");
+			url("../fonts/MIC.ttf") format("truetype");
        font-weight: normal;
        font-style: normal;
 }
