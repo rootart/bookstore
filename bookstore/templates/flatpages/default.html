@@ -7,7 +7,7 @@
 <div class="post">
   {{ settings }}
   {% if request.path == '/about/' %}
-    {% thumbnail about_us_image "x280" crop="center" as im %}
+    {% thumbnail about_us_image "221x414" crop="center" as im %}
       <img src="{{ im.url }}">
   {% endthumbnail %}
   {% endif %}
