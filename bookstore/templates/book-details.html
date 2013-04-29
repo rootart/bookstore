@@ -18,13 +18,13 @@ $('document').ready(function(){
   $('img[data-cover]').fancybox({
     'autoHeight': true,
     'autoWidth': true,
-    'padding': 8,
+    'padding': 0,
+    'closeClick': true,
     'closeBtn': false,
     'transitionIn': 'elastic',
     'transitionOut': 'elastic',
     'openEffect'  : 'elastic',
-    
-    'href': {% thumbnail product.main_cover_image  "300" as im %}"{{ im.url }}"{% endthumbnail %}
+    'href': "{{ product.main_cover_image.url }}"
   });
   
 });
