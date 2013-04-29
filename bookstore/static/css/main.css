@@ -651,6 +651,7 @@ ul {
 .detail-image img {
 	display: block;
 	margin: auto;	
+  cursor: pointer;
 }
 .detail .detail-images a {
   float: left;
