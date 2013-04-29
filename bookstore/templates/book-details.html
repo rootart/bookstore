@@ -57,7 +57,7 @@ $('document').ready(function(){
    <article>
           <header class="title">
             <b>{{ product.author }}</b><br>
-            {{ product.name }}{% if product %}<b>{{ product.additional_name_info }}<b/>{% endif %}
+            {{ product.name }}{% if product %}<b>{{ product.additional_name_info }}</b>{% endif %}
           </header>
           <p class="desc">{{ product.short_description|linebreaksbr }} {% if product.description %}<a href="javascript:;" data-description-show class="collapse"> подробнее</a> {% endif %}</p><p class="desc detailed-description">{{ product.description|linebreaksbr }}<a href="javascript:;" data-description-hide  class="collapse"> скрыть</a></p>
 	  <ul class="detail-list">
