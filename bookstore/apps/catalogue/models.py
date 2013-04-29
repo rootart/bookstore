@@ -85,7 +85,7 @@ class Product(models.Model):
     name = models.CharField(_("Product name"),
         max_length=255, blank=True, null=True
     )
-    additional_name_info = models.CharField(_("Product name"),
+    additional_name_info = models.CharField(_("Additional product name info"),
         max_length=255, blank=True, null=True
     )
     catalogue_name = models.CharField(_("Catalogue product name"),
