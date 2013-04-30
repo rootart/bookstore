@@ -18,14 +18,15 @@
 {% else %}
 <div class="catalogue cf search-results">
   {% for product in page.object_list %}
-  		<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
-              <figure>
-                {% thumbnail product.object.catalogue_image "145x145" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
-                {% endthumbnail %}
-                <figcaption><b>{{ product.object.author }}</b> <br>{{ product.object.name }}</figcaption>
-              </figure>
-  	   </a>
+  	<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
+            <figure>
+              {% thumbnail product.object.catalogue_image "155x155" crop="center" as im %}
+                  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.object.name }}">
+              {% endthumbnail %}
+              <figcaption>{% if product.object..author %}<b>{{ product.object.author }}</b><br>{% endif %}{{ product.object.catalogue_name|default:"" }}</figcaption>
+            </figure>
+     </a>
+  
   {% endfor %}
 </div>
 {% endif %}
