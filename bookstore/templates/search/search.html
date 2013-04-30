@@ -16,7 +16,7 @@
    <article style="margin-left: 52px;"><p>К сожалению, по Вашему запросу ничего не найдено.<br>Попробуйте задать другие параметры поиска.</p></article>
  </div>
 {% else %}
-<div class="catalogue cf search-results">
+<div class="catalogue cf">
   {% for product in page.object_list %}
   	<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
             <figure>
