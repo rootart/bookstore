@@ -75,7 +75,7 @@ $('document').ready(function(){
 	  <div class="tags">
 		  <header>{% trans "теги" %}:</header>
       {% for tag in product.tags.all %}
-        <a href="#">{{ tag.name }}</a>
+        <a href="{% url catalogue-by-tag tag.slug %}">{{ tag.name }}</a>
       {% endfor %}
 	  </div>
        </article>

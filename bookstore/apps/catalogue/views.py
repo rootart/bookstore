@@ -53,10 +53,22 @@ def category(request, slug):
     return render(request, 'catalogue.html', data)
 
 
+def catalogue_by_tag(request, slug):
+    products = Product.objects.active().filter(tags__slug=slug)
+    categories = Category.objects.all()
+    if products.count() == 0:
+        raise Http404
+    data = {
+        'products': products,
+        'categories': categories
+    }
+    return render(request, 'catalogue.html', data)
+
 def book_details(request, category_slug, slug):
     try:
         category = Category.objects.get(slug=category_slug)
-        product = Product.objects.active().filter(slug=slug, category=category)[0]
+        product = Product.objects.active().filter(slug=slug, category=category).select_related(
+            'category', 'publisher', 'language').prefetch_related('tags')[0]
     except (Category.DoesNotExist, Product.DoesNotExist, IndexError):
         raise Http404
 
