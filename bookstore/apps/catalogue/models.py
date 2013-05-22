@@ -70,6 +70,13 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
+
+    AVAILABLE_STATUSES = (
+        (0, _('Not available')),
+        (1, _('Anticipating product')),
+        (2, _('Is available'))
+    )
+
     HARD_BINDING = u"твердый переплет"
     SOFT_BINDING = u"мягкая обложка"
     BINDING_TYPES = (
@@ -130,6 +137,10 @@ class Product(models.Model):
     )
     language = models.ForeignKey(TextLanguage, blank=True, null=True,
         verbose_name=_("Text language")
+    )
+    available_status = models.PositiveIntegerField(
+        choices = AVAILABLE_STATUSES,
+        default=0
     )
     available = models.BooleanField(verbose_name=_("Is available"))
     anticipating = models.BooleanField(verbose_name=_("Anticipating product"))
