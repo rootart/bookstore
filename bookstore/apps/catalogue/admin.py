@@ -27,7 +27,7 @@ class ProductImageInline(AdminImageMixin, admin.TabularInline):
 
 
 class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ("__unicode__", "homepage_position", "catalogue_position", "category_position",\
+    list_display = ("__unicode__", "available_status", "homepage_position", "catalogue_position", "category_position",\
      "publish_year", "price", "stock_price")
     list_filter = ("show_on_main", "category", "publisher", "publish_year", "available", "anticipating",\
         "language", "created", "modified")
