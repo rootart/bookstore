@@ -79,6 +79,10 @@ class Product(models.Model):
     category = models.ForeignKey(Category,
         verbose_name=_("Category")
     )
+    homepage_position = models.PositiveIntegerField(default=0)
+    category_position = models.PositiveIntegerField(default=0)
+    catalogue_position = models.PositiveIntegerField(default=0)
+
     author = models.CharField(_("Author"), blank=True, null=True,
         max_length=255
     )
@@ -160,7 +164,7 @@ class Product(models.Model):
         verbose_name=_("Main cover image"),
         blank=True, null=True
     )
-    show_on_main = models.BooleanField(default=True)
+    show_on_main = models.BooleanField(default=False)
 
     objects = ProductManager()
 

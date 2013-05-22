@@ -18,7 +18,7 @@ from orders.forms import OrderForm
 
 
 def homepage(request):
-    products = Product.objects.filter(show_on_main=True)
+    products = Product.objects.filter(show_on_main=True).order_by('-homepage_position')
     posts = Post.objects.filter(
         is_published=True,
         show_on_main=True
@@ -35,7 +35,7 @@ def homepage(request):
 def catalogue(request):
     categories = Category.objects.all()
     data = {
-        'products': Product.objects.active().all(),
+        'products': Product.objects.active().all().order_by('-catalogue_position'),
         'categories': categories
     }
 
@@ -44,7 +44,7 @@ def catalogue(request):
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    products = Product.objects.active().filter(category=category)
+    products = Product.objects.active().filter(category=category).order_by('-category_position')
     data = {
         'categories': Category.objects.all(),
         'category': category,
