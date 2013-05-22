@@ -142,11 +142,8 @@ class Product(models.Model):
         choices = AVAILABLE_STATUSES,
         default=0
     )
-    available = models.BooleanField(verbose_name=_("Is available"))
-    anticipating = models.BooleanField(verbose_name=_("Anticipating product"))
-    not_available = models.BooleanField(verbose_name=_("Not available"))
     tags = models.ManyToManyField(Tags, blank=True, null=True,
-        verbose_name=_("Tags")
+        verbose_name=_("Tags"), editable=False
     )
 
     price = models.DecimalField(blank=True, null=True,

@@ -29,7 +29,7 @@ class ProductImageInline(AdminImageMixin, admin.TabularInline):
 class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ("__unicode__", "available_status", "homepage_position", "catalogue_position", "category_position",\
      "publish_year", "price", "stock_price")
-    list_filter = ("show_on_main", "category", "publisher", "publish_year", "available", "anticipating",\
+    list_filter = ("show_on_main", "category", "available_status", "publisher", "publish_year",\
         "language", "created", "modified")
     prepopulated_fields = {'slug': ('author', 'name')}
     inlines = [ProductImageInline,]

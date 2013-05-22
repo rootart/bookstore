@@ -48,10 +48,6 @@ $('document').ready(function(){
         {% endthumbnail %}
       {% endfor %}
 	  </div>
-    <div id="fb-root"></div>
-    <br><br>
-    <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-
    </div>
 			   
    <article>
@@ -73,10 +69,12 @@ $('document').ready(function(){
 	  <p class="waiting">{% if product.available and not product.anticipating %}есть в наличии{% elif product.anticipating %}ожидается поступление{% else %}нет в наличии{% endif %}</p>
 	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available %}купить{% else %}заказать{% endif %}</a>
 	  <div class="tags">
-		  <header>{% trans "теги" %}:</header>
-      {% for tag in product.tags.all %}
-        <a href="{% url catalogue-by-tag tag.slug %}">{{ tag.name }}</a>
-      {% endfor %}
+      {# <header>{% trans "теги" %}:</header> #}
+      {#       {% for tag in product.tags.all %} #}
+      {#         <a href="{% url catalogue-by-tag tag.slug %}">{{ tag.name }}</a> #}
+      {#       {% endfor %} #}
+      <div id="fb-root"></div>
+      <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 	  </div>
        </article>
  </div>
