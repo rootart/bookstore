@@ -64,6 +64,12 @@ class Tags(models.Model):
     def __unicode__(self):
         return self.name
 
+class BindingType(models.Model):
+    name = models.CharField(_("Type of binding"), max_length=255)
+
+    def __unicode__(self):
+        return self.name
+
 class ProductManager(models.Manager):
     def active(self):
         return self.get_query_set().filter(is_active=True)
@@ -77,12 +83,6 @@ class Product(models.Model):
         (2, _('Is available'))
     )
 
-    HARD_BINDING = u"твердый переплет"
-    SOFT_BINDING = u"мягкая обложка"
-    BINDING_TYPES = (
-        ('hard', HARD_BINDING),
-        ('soft', SOFT_BINDING)
-    )
     category = models.ForeignKey(Category,
         verbose_name=_("Category")
     )
@@ -123,9 +123,8 @@ class Product(models.Model):
     publish_year = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Publishing year")
     )
-    binding = models.CharField(blank=True, null=True, max_length=255,
-        verbose_name=_("Binding type"),
-        choices = BINDING_TYPES
+    binding_type = models.ForeignKey(BindingType, blank=True, null=True,
+        verbose_name=_("Binding type")
     )
     pages = models.PositiveIntegerField(blank=True, null=True,
         verbose_name=_("Number of pages")

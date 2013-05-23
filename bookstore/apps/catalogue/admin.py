@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Publisher, Tags, TextLanguage,\
-    Product, ProductImage
+    Product, ProductImage, BindingType
 
 from sorl.thumbnail.admin import AdminImageMixin
 
@@ -39,3 +39,4 @@ admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Tags, TagsAdmin)
 admin.site.register(TextLanguage, TextLanguageAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(BindingType)
