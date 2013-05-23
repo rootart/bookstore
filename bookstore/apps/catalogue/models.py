@@ -86,9 +86,15 @@ class Product(models.Model):
     category = models.ForeignKey(Category,
         verbose_name=_("Category")
     )
+    extra_category = models.ForeignKey(Category,
+        verbose_name=_("Extra category"),
+        related_name = 'products_extra',
+        blank=True, null=True
+    )
     homepage_position = models.PositiveIntegerField(default=0)
     category_position = models.PositiveIntegerField(default=0)
     catalogue_position = models.PositiveIntegerField(default=0)
+    extra_category_position = models.PositiveIntegerField(default=0)
 
     author = models.CharField(_("Author"), blank=True, null=True,
         max_length=255

@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.db.models import Q
 
 from django.conf import settings
 
@@ -44,7 +45,7 @@ def catalogue(request):
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    products = Product.objects.active().filter(category=category).order_by('category_position')
+    products = Product.objects.active().filter(Q(category=category) | Q(extra_category=category)).order_by('category_position')
     data = {
         'categories': Category.objects.all(),
         'category': category,
