@@ -28,7 +28,6 @@ $('document').ready(function(){
   });
   
 });
-
 </script>
 {% endblock extra_js %}
 
@@ -43,7 +42,7 @@ $('document').ready(function(){
 
 	  <div class="detail-images cf">
       {% for image in product.productimage_set.all %}
-        {% thumbnail image.image "32x32" crop="center" as im %}
+        {% thumbnail image.image "39x39" crop="center" as im %}
             <a  rel="group" class="book-gallery" href="{{ image.image.url }}"><img src="{{ im.url }}"  width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}"></a>
         {% endthumbnail %}
       {% endfor %}
@@ -53,7 +52,8 @@ $('document').ready(function(){
    <article>
           <header class="title">
             {% if product.author %}<b>{{ product.author }}</b><br>{% endif %}
-            {{ product.name }}{% if product.additional_name_info %}<br><b>{{ product.additional_name_info }}</b>{% endif %}
+            {{ product.name }}{% if product.additional_name_info %}<br>
+            <span class="additional-title">{{ product.additional_name_info }}</span>{% endif %}
           </header>
           <p class="desc">{{ product.short_description|linebreaksbr }} {% if product.description %}<a href="javascript:;" data-description-show class="collapse"> подробнее</a> {% endif %}</p><p class="desc detailed-description">{{ product.description|linebreaksbr }}<a href="javascript:;" data-description-hide  class="collapse"> скрыть</a></p>
 	  <ul class="detail-list">
