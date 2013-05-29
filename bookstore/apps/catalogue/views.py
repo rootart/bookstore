@@ -46,6 +46,15 @@ def catalogue(request):
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     products = Product.objects.active().filter(Q(category=category) | Q(extra_category=category)).order_by('category_position')
+    results = []
+    for item in products:
+        if item.extra_category == category:
+            item.sort_key = item.extra_category_position
+        else:
+            item.sort_key = item.category_position
+        results.append(item)
+
+    products = sorted(results, key=lambda i: i.sort_key)
     data = {
         'categories': Category.objects.all(),
         'category': category,
