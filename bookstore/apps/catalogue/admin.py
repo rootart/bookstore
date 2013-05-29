@@ -36,7 +36,7 @@ class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Publisher, PublisherAdmin)
-admin.site.register(Tags, TagsAdmin)
+#admin.site.register(Tags, TagsAdmin)
 admin.site.register(TextLanguage, TextLanguageAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(BindingType)
