@@ -23,7 +23,7 @@
               {% thumbnail product.object.catalogue_image "155x155" crop="center" as im %}
                   <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.object.name }}">
               {% endthumbnail %}
-              <figcaption>{% if product.object..author %}<b>{{ product.object.author }}</b><br>{% endif %}{{ product.object.catalogue_name|default:"" }}</figcaption>
+              <figcaption>{% if product.object.author %}<b>{{ product.object.author }}</b><br>{% endif %}{{ product.object.catalogue_name|default:"" }}</figcaption>
             </figure>
      </a>
   
