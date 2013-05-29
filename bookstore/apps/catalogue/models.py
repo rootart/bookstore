@@ -67,6 +67,10 @@ class Tags(models.Model):
 class BindingType(models.Model):
     name = models.CharField(_("Type of binding"), max_length=255)
 
+    class Meta:
+        verbose_name = _("Binding type")
+        verbose_name_plural = _("Binding types")
+
     def __unicode__(self):
         return self.name
 
@@ -91,10 +95,18 @@ class Product(models.Model):
         related_name = 'products_extra',
         blank=True, null=True
     )
-    homepage_position = models.PositiveIntegerField(default=0)
-    category_position = models.PositiveIntegerField(default=0)
-    catalogue_position = models.PositiveIntegerField(default=0)
-    extra_category_position = models.PositiveIntegerField(default=0)
+    homepage_position = models.PositiveIntegerField(default=0,
+        verbose_name=_("Homepage product position")
+    )
+    category_position = models.PositiveIntegerField(default=0,
+        verbose_name=_("Category product position")
+    )
+    catalogue_position = models.PositiveIntegerField(default=0,
+        verbose_name=_("Catalogue product position")
+    )
+    extra_category_position = models.PositiveIntegerField(default=0,
+        verbose_name=_("Extra category product position")
+    )
 
     author = models.CharField(_("Author"), blank=True, null=True,
         max_length=255
@@ -145,7 +157,8 @@ class Product(models.Model):
     )
     available_status = models.PositiveIntegerField(
         choices = AVAILABLE_STATUSES,
-        default=0
+        default=0,
+        verbose_name=_("Availability status")
     )
     tags = models.ManyToManyField(Tags, blank=True, null=True,
         verbose_name=_("Tags"), editable=False
@@ -177,7 +190,9 @@ class Product(models.Model):
         verbose_name=_("Main cover image"),
         blank=True, null=True
     )
-    show_on_main = models.BooleanField(default=False)
+    show_on_main = models.BooleanField(default=False,
+        verbose_name=_("Show on main")
+    )
 
     objects = ProductManager()
 
