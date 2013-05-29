@@ -93,7 +93,6 @@ msgid "Binding type"
 msgstr "Тип обложки"
 
 #: bookstore/apps/catalogue/models.py:72
-#, fuzzy
 msgid "Binding types"
 msgstr "Тип обложки"
 
