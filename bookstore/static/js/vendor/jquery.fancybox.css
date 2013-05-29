@@ -98,20 +98,27 @@
 }
 
 .fancybox-close {
-    background-color: #646267;
+    /*background-color: #646267;
     background-image: none;
     border: 3px solid #FFFFFF;
     border-radius: 50% 50% 50% 50%;
-    box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.3);*/
     cursor: pointer;
-    height: 17px;
+    
     position: absolute;
-    right: -11px;
-    top: -9px;
-    width: 17px;
+    /*right: -11px;
+    top: -9px;*/
+    top: -14px;
+    right: -14px;
+    /*width: 17px;
+    height: 17px;*/
+    width: 33px;
+    height: 35px;
+    
+    background: url("fancybox_sprite.png") no-repeat left top;
     z-index: 8040;
 }
-.fancybox-close:after {
+/*.fancybox-close:after {
     color: #FFFFFF;
     content: "x";
     font-size: 12px;
@@ -121,7 +128,7 @@
     position: absolute;
     top: 3%;
 }
-
+*/
 .fancybox-nav {
 	position: absolute;
 	top: 0;
