@@ -403,7 +403,7 @@ ul {
   left: 212px;
   bottom: 19px;
   
-  width: 835px;
+  width: 862px;
 }
 .category table {
   width: 100%;
@@ -417,6 +417,7 @@ ul {
   padding-right: 0;
 }
 .category a {
+  text-align: center;
   font-size: 1em;
   line-height: 1;
   
@@ -438,8 +439,9 @@ ul {
 }*/
 /*CONTENT*/
 .content {
-  margin: 0 212px;
-  /*width: 862px;*/
+  /*margin: 0 212px;*/
+  width: 862px;
+  margin-left: 212px;
   
   *zoom: 1;
 }
@@ -523,13 +525,11 @@ ul {
 .catalogue figure {
   float: left;
   
-  margin-right: 14px;
-  /*margin-right: 15px;*/
+  margin-right: 17px;
   margin-bottom: 30px;
   text-align: center;
   
-  /*width: 155px;*/
-  width: 153px;
+  width: 155px;
   overflow: hidden;
 
   box-sizing: border-box;
