@@ -11,8 +11,8 @@
       <img src="{{ im.url }}">
   {% endthumbnail %}
   {% endif %}
-   <article {% if request.path == '/contacts/' %}style="margin-left: 52px;"{% endif %}>
-          <p {% if request.path == '/about/' %}style="margin: -5px 0 0 0;"{% endif %}>{{ flatpage.content|linebreaksbr }}</p>
+   <article>
+          <p>{{ flatpage.content|linebreaksbr }}</p>
        </article>
  </div>
  

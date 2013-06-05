@@ -13,14 +13,14 @@
 
 {% if not page.object_list %}
 <div class="post">
-   <article style="margin-left: 52px;"><p>К сожалению, по Вашему запросу ничего не найдено.<br>Попробуйте задать другие параметры поиска.</p></article>
+   <article><p>К сожалению, по Вашему запросу ничего не найдено.<br>Попробуйте задать другие параметры поиска.</p></article>
  </div>
 {% else %}
 <div class="catalogue cf">
   {% for product in page.object_list %}
   	<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
             <figure>
-              {% thumbnail product.object.catalogue_image "155x155" crop="center" as im %}
+              {% thumbnail product.object.catalogue_image "150x150" crop="center" as im %}
                   <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.object.name }}">
               {% endthumbnail %}
               <figcaption>{% if product.object.author %}<b>{{ product.object.author }}</b><br>{% endif %}{{ product.object.catalogue_name|default:"" }}</figcaption>

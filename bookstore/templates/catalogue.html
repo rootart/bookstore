@@ -1,12 +1,25 @@
 {% extends "base.html" %} {% load i18n thumbnail %}
 
 {% block subcategories %}
-<div class="category">
+<!--<div class="category">
   {% for cat in categories %}
         <a href="{% url category-details cat.slug %}" class="{% if cat.id == category.id%}active{% endif %}">{{ cat.name }}</a>
   {% endfor %}
+</div>-->
+
+<div class="category">
+<table>
+  <tr>
+    {% for cat in categories %}
+    <td>
+          <a href="{% url category-details cat.slug %}" class="{% if cat.id == category.id%}active{% endif %}">{{ cat.name }}</a>
+    </td>      
+    {% endfor %}
+  </tr>
+</table>
 </div>
 {% endblock subcategories %}
+
 
 
 {% block content %}
@@ -15,7 +28,7 @@
   {% for product in products %}
   		<a href="{% url book-details product.category.slug product.slug %}" class=""> 
               <figure>
-                {% thumbnail product.catalogue_image "155x155" crop="center" as im %}
+                {% thumbnail product.catalogue_image "150x150" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
                 {% endthumbnail %}
                 <figcaption>{% if product.author %}<b>{{ product.author }}</b><br>{% endif %}{{ product.catalogue_name|default:"" }}</figcaption>
