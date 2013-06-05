@@ -28,7 +28,7 @@
   {% for product in products %}
   		<a href="{% url book-details product.category.slug product.slug %}" class=""> 
               <figure>
-                {% thumbnail product.catalogue_image "150x150" crop="center" as im %}
+                {% thumbnail product.catalogue_image "153x153" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ product.name }}">
                 {% endthumbnail %}
                 <figcaption>{% if product.author %}<b>{{ product.author }}</b><br>{% endif %}{{ product.catalogue_name|default:"" }}</figcaption>
