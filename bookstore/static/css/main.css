@@ -255,7 +255,7 @@ ul {
 }
 .head nav {
   float: left;
-  /*width: 395px;*/
+  width: 395px;
 }
 .head .top {
 	height: 86px;
@@ -263,15 +263,10 @@ ul {
 .head nav a {
   font-size: 1.3em;
   font-family: MIC, Sans-serif;
-  line-height: 1;
-  
-  float: left;
-  
+  line-height: 1; 
+  float: left; 
   padding: 8px 10px;
-  
-  /*background: #aa1b5b;*/
   background: #941a4d;
- 
   border-radius: 4px;
   
   text-transform: uppercase;

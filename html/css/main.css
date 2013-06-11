@@ -257,6 +257,7 @@ ul {
 }
 .head nav {
   float: left;
+  width: 395px;
 }
 .head .top {
 	height: 86px;
