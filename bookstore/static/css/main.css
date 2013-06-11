@@ -10,11 +10,6 @@ textarea {
     color: #222;
 }
 
-body {
-    font-size: 1em;
-    line-height: 1.4;
-}
-
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -218,8 +213,7 @@ body {
   background: #fff;
   font: 62.5%/1.2 Verdana,Arial, Sans-serif;
   color: #646267;
-  
-  margin: 0 3px 0 1%;
+  margin: 0 .5%;
 }
 
 a {
@@ -228,11 +222,7 @@ a {
 
 hr {
   height: 3px;
-  
-  /*background: #6f1030;*/
   background: #941a4d;
-  
-/*  margin-left: -22px;*/
   margin-left: 0;
 }
 
@@ -242,8 +232,9 @@ ul {
 	list-style-type: none;
 }
 .wrap {
-  min-width: 1100px;
-  max-width: 1425px;
+  /*min-width: 1100px;
+  max-width: 1425px;*/
+  width: 1250px;
   margin: 0 auto;
 }
 /*HEADER*/
@@ -260,7 +251,7 @@ ul {
 .logo img {
 	overflow: hidden;
 	width: 186px;
-	height: 86px;
+	height: 69px;
 }
 .head nav {
   float: left;
@@ -342,16 +333,13 @@ ul {
   
   display: inline-block;
   vertical-align: top;
-  
+    
   text-transform: uppercase;
   color: #fff;
-  
   background: none;
-  
   border: none;
   padding: 0;
   margin: -1px 0 0 0;
-
   font-family: MIC, Sans-serif;
 }
 .facebook-link {
@@ -360,9 +348,7 @@ ul {
   right: 0;
   
   padding: 14px 5px 15px;
-  
   background: url(../img/facebook.png) 11px 5px no-repeat #941a4d;
-  
   border-radius: 4px;
   
   margin-left: 5px;
@@ -372,18 +358,14 @@ ul {
 }
 .head-wrap {
   position: relative;
-  margin-left: 212px;
+  margin-left: 194px;
 }
 .head .menu-space {
-  /*background:  #aa1b5b;*/
   background: #941a4d;
-  
   height: 29px;
-
-  /*float: left;
-  width: 433px;*/
   border-radius: 4px;
   
+  top: 0;
   right: 35px;
   left: 395px;
   position: absolute;
@@ -392,18 +374,14 @@ ul {
 	width: 203px;
 }
 .head.active .menu-space {
-	/*width: 293px;*/
   left: 535px;
 }
 /*CONTENT*/
 .category {
-	/*margin: -36px 0 0 187px;*/
-  
   position: absolute;
-  left: 212px;
+  left: 194px;
   bottom: 19px;
-  
-  width: 862px;
+  width: 861px;
 }
 .category table {
   width: 100%;
@@ -440,8 +418,10 @@ ul {
 /*CONTENT*/
 .content {
   /*margin: 0 212px;*/
-  width: 862px;
-  margin-left: 212px;
+  /*width: 862px;
+  margin-left: 212px;*/
+  width: 859px;
+  margin: auto;
   
   *zoom: 1;
 }

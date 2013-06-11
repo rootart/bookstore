@@ -31,8 +31,8 @@
           {% block header %}
               <header class="head cf">
     			  <div class="top">
-    	            <!--<a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.jpg" %}" alt="photo art book" width="186" height="88"></a>-->
-					 <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.png" %}" alt="photo art book" width="186" height="86"></a>
+    	            <!--<a class="logo" href="{% url homepage %}"><img src="{% static "img/logo.png" %}" alt="photo art book" width="186" height="86"></a>-->
+					 <a class="logo" href="{% url homepage %}"><img src="{% static "img/logo-without-text.png" %}" alt="photo art book" width="186" height="69"></a>
            <div class="head-wrap cf">
               <nav class="cf">
                 <a class="catalog {% if 'catalogue' in request.path and not product %}active{% endif %}" href="{% url catalogue %}">Каталог</a>
