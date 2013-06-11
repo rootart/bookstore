@@ -12,11 +12,11 @@
 {% block content %}
 
 {% if not page.object_list %}
-<div class="post">
+<div class="post search-wrap">
    <article><p>К сожалению, по Вашему запросу ничего не найдено.<br>Попробуйте задать другие параметры поиска.</p></article>
  </div>
 {% else %}
-<div class="catalogue cf">
+<div class="catalogue search-wrap cf">
   {% for product in page.object_list %}
   	<a href="{% url book-details product.object.category.slug product.object.slug %}" class=""> 
             <figure>

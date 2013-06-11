@@ -268,7 +268,7 @@ ul {
   font-family: MIC, Sans-serif;
   line-height: 1; 
   float: left; 
-  padding: 8px 10px;
+  padding: 8px 10px 9px;
   background: #941a4d;
   border-radius: 4px;
   
@@ -360,7 +360,7 @@ ul {
 }
 .head .menu-space {
   background: #941a4d;
-  height: 29px;
+  height: 30px;
   border-radius: 4px;
   
   top: 0;
@@ -378,7 +378,7 @@ ul {
 .category {
   position: absolute;
   left: 194px;
-  bottom: 19px;
+  bottom: 17px;
   width: 861px;
 }
 .category table {
@@ -532,6 +532,12 @@ ul {
 .catalogue figure figcaption b {
   font-weight: normal;
 }
+.search-wrap {
+  min-height: 415px;
+}
+.post.search-wrap {
+  padding: 0;
+}
 .subscribe {
 	/*margin: 0px 15px 20px 51px;*/
   margin: 0 0 20px;
@@ -603,6 +609,9 @@ ul {
 	
 	line-height: 1.5;
 }
+.post article p:first-child {
+  margin-top: 0;
+}
 .post header {
 	font-weight: bold;
 	font-size: 1.4em;
@@ -640,15 +649,11 @@ ul {
 }
 .detail-image figure {
 	margin: 0 0 15px 0;
-	text-align: center;
-	
+	text-align: center;	
 	width: 300px;
 	overflow: hidden;
-  
   background: #fff;
-  
-  box-shadow: 6px 6px 4px rgba(76, 76, 76, 0.45);
-  
+  box-shadow: 4px 4px 7px rgba(76, 76, 76, 0.3);
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
   -ms-box-sizing: border-box;
@@ -664,23 +669,18 @@ ul {
 	margin: 0 13px 10px 0;
 	overflow: hidden;
 }
-/*.detail .detail-images a:nth-child(7n) {
-	margin-right: 0;
-}*/
 .detail .detail-images a:nth-child(6n) {
 	margin-right: 0;
 }
 .detail .detail-images img {
 	display: inline-block;
-	vertical-align: top;
-	
+	vertical-align: top;	
 	border-radius: 2px;
 }
 .detail article {
 	display: inline-block;
 	vertical-align: top;
 	width: 450px;
-	
 	line-height: 1.5;
 }
 .detail .title {
@@ -713,7 +713,6 @@ ul {
 }
 .detail .detail-list li {
 	margin-bottom: 1px;
-	
 }
 .detail .price {
 	font-size: 1.4em;
