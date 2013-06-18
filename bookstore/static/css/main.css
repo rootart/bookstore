@@ -345,7 +345,7 @@ ul {
   top: 0;
   right: 0;
   
-  padding: 14px 5px 15px;
+  padding: 15px 5px 15px;
   background: url(../img/facebook.png) 11px 5px no-repeat #941a4d;
   border-radius: 4px;
   
@@ -653,7 +653,7 @@ ul {
 	width: 300px;
 	overflow: hidden;
   background: #fff;
-  box-shadow: 4px 4px 7px rgba(76, 76, 76, 0.3);
+  box-shadow: 4px 4px 7px rgba(76, 76, 76, 0.45);
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
   -ms-box-sizing: border-box;
