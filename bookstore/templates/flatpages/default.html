@@ -4,7 +4,7 @@
 {% block subcategories %}{% endblock subcategories %}
 
 {% block content %}
-<div class="post">
+<div class="post search-wrap">
   {{ settings }}
   {% if request.path == '/about/' %}
     {% thumbnail about_us_image "x430" crop="center" as im %}
