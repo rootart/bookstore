@@ -84,7 +84,8 @@ class Product(models.Model):
     AVAILABLE_STATUSES = (
         (0, _('Not available')),
         (1, _('Anticipating product')),
-        (2, _('Is available'))
+        (2, _('Is available')),
+        (3, _('Pre-order'))
     )
 
     category = models.ForeignKey(Category,
