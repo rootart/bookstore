@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
 
 from sorl.thumbnail import ImageField
 
@@ -17,6 +18,9 @@ class Post(models.Model):
     is_published = models.BooleanField(default=True,
         verbose_name=_("Is published")
     )
+    url = models.CharField(max_length=255, blank=True, null=True,
+        verbose_name=_("Redirect url")
+    )
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -28,3 +32,7 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_url(self):
+        return self.url if self.url else \
+            reverse('post-details', args=[self.slug])

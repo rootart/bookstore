@@ -37,7 +37,7 @@
       bullet_id = clicked_bullet.data('article');
       $('.main-article li').hide();
       sel = ".main-article li[data-article=" + bullet_id + "]";
-      $(sel).show();
+      $(sel).fadeIn();
       $('.bullets a').removeClass('active');
       clicked_bullet.addClass('active');
     });
@@ -56,6 +56,21 @@
       _this.parent().hide();
       $('*[data-description-show]').show();
     });
+    
+    var slider = $('ul.homepage-slider li'), bullets = $('.bullets a'),
+         firstSlider = slider.eq(0), timeInterval = 7000;
+    var timer = setInterval(function() {
+      
+      
+      if ($('.bullets a:last').hasClass('active')){
+        $('.bullets a').eq(0).click();
+      }
+      else {
+        bullets.next().click();
+      }
+    }, timeInterval);
+    
+    
   });
 
 }).call(this);
