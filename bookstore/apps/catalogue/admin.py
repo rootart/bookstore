@@ -1,9 +1,94 @@
+import datetime
+from functools import wraps
+from functools import update_wrapper
+from urllib import urlencode
+from django.conf import settings
+from django.contrib.admin import util as admin_util
+from django.http import HttpResponse, HttpResponseRedirect
+from django import forms
+from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.contrib import admin
+from django.utils.html import strip_tags
+from django.contrib import messages
+from django.contrib.admin.util import label_for_field
+from django.utils.translation import ugettext_lazy as _
 
 from .models import Category, Publisher, Tags, TextLanguage,\
     Product, ProductImage, BindingType
 
 from sorl.thumbnail.admin import AdminImageMixin
+
+class AdjustableColumnsAdminMixin(object):
+
+    change_list_template = 'admin/change_list_with_adjustable_fields.html'
+
+    def get_list_display(self, request):
+        """
+        Return a sequence containing the fields to be displayed on the
+        changelist.
+        """
+
+        info = self.admin_site.name, self.model._meta.app_label, self.model._meta.module_name
+        return request.session.get(
+            '%s_%s_%s_list_display' % info,
+            getattr(self, 'default_list_display', self.list_display)
+        )
+
+    def get_urls(self):
+
+        from django.conf.urls import url
+
+        def wrap(view):
+            def wrapper(*args, **kwargs):
+                return self.admin_site.admin_view(view)(*args, **kwargs)
+            return update_wrapper(wrapper, view)
+        info = self.model._meta.app_label, self.model._meta.module_name
+
+        urlpatterns = super(AdjustableColumnsAdminMixin, self).get_urls()
+
+        return [
+            url(r'^change_columns/$',
+                wrap(self.change_list_display),
+                name='%s_%s_change_list_display' % info
+                )
+            ] + urlpatterns
+
+    def get_change_column_form(self):
+
+        choices = [
+            (field, (label_for_field(field, self.model, model_admin=self)).capitalize()) \
+            for field in self.list_display
+        ]
+
+        class AdjustableColumnsForm(forms.Form):
+            columns = forms.MultipleChoiceField(
+                choices=choices,
+                widget=FilteredSelectMultiple('columns', False)
+            )
+
+        return AdjustableColumnsForm
+
+    def change_list_display(self, request):
+
+        form = self.get_change_column_form()(request.POST or None, initial={
+                'columns': self.get_list_display(request)
+            }
+        )
+        if form.is_valid():
+            info = self.admin_site.name, self.model._meta.app_label, self.model._meta.module_name
+            request.session['%s_%s_%s_list_display' % info] = form.cleaned_data['columns']
+        else:
+            messages.error(request, _('Error changing columns'))
+        return HttpResponseRedirect('../')
+
+    def changelist_view(self, request, extra_context=None):
+        extra_context = extra_context or {}
+        extra_context.update({
+            'columns_form': self.get_change_column_form()(
+                initial={'columns': self.get_list_display(request)}
+            )
+        })
+        return super(AdjustableColumnsAdminMixin, self).changelist_view(request, extra_context)
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -26,7 +111,7 @@ class ProductImageInline(AdminImageMixin, admin.TabularInline):
     model = ProductImage
 
 
-class ProductAdmin(AdminImageMixin, admin.ModelAdmin):
+class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmin):
     list_display = ("__unicode__", "category", "extra_category", "available_status", "homepage_position",\
     "catalogue_position", "category_position", "stock_price")
     list_filter = ("show_on_main", "category", "available_status", "publisher")

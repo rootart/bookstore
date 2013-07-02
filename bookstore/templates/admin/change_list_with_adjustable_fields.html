@@ -1,0 +1,32 @@
+{% extends "admin/change_list_custom.html" %}
+
+{% load static from staticfiles %}{% load i18n %}
+
+{% block extrahead %}
+  {{ block.super }}
+  {{ columns_form.media }}
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %}" />
+  <style type="text/css">
+    .change-list select.filtered{
+      background: white !important;
+      min-height: 0 !important;
+    }
+  </style>
+{% endblock extrahead %}
+
+{% block filters %}
+  {{ block.super }}
+  <div class="actions choose-columns-label">
+    <a href="#" onclick="django.jQuery('#choose-columns-form').toggle(); return false;">{% trans "Choose columns" %}</a>
+  </div>
+  <form method="post" action="change_columns/" id="choose-columns-form" style="{% if not columns_form.errors %}display:none{% endif %}">
+    <div class="form-row">
+      <div class="field-box">
+        {% csrf_token %}
+        {{ columns_form.errors }}
+        {{ columns_form.columns }}
+        <input type="submit" value="{% trans "change" %}" />
+      </div>
+    </div>
+  </form>
+{% endblock %}

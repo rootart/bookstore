@@ -1,0 +1,13 @@
+{% extends "admin/change_list.html" %}
+{% load static from staticfiles %}{% load i18n %}
+{% block extrahead %}
+    {{ block.super }}
+{% endblock extrahead %}
+
+{% block filters %}
+    {{ block.super }}
+    <div class="actions">
+        <a href="javascript:;" id="save-filter-btn">{% trans "Save filter" %}</a>
+        <a href="javascript:;" id="clear-filter-btn">{% trans "Clear filter" %}</a>
+    </div>
+{% endblock %}
