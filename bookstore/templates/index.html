@@ -15,7 +15,7 @@
                   <!-- <header>
                     <a href="{% url post-details post.slug %}">{{ post.title }}</a>
                   </header> -->
-                  <p>{{ post.content|truncatewords:"50" }} <a class="more" href="{{ post.get_url }}">подробнее</a></p>
+                  <p>{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
                   <!-- <p>
                     <i>Lorem Ipsum</i> <b>is simply dummy text of</b>
                     <br>

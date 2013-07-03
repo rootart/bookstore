@@ -451,7 +451,7 @@ ul {
 	display: inline-block;
 	vertical-align: top;
 	/*width: 360px;*/
-  width: 450px;
+  width: 440px;
 	
 	line-height: 1.5;
 /*  color: #646267;*/
@@ -495,8 +495,9 @@ ul {
 	background: #941a4d;
 }
 .banner {
-  background-color: #969696;
-  padding: 30px 70px 7px 70px;
+  background-color: #545E64;
+  padding: 30px 80px 7px 70px;
+  height: 290px;
 }
 .banner .more {
   font-style: italic;

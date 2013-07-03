@@ -8,7 +8,8 @@ from sorl.thumbnail import ImageField
 class Post(models.Model):
     title = models.CharField(_("Post title"), max_length=255)
     slug = models.SlugField(_("Post url"), unique=True)
-    content = models.TextField(_("Post content"))
+    banner_content = models.TextField(_("Banner content"), blank=True, null=True)
+    content = models.TextField(_("Post content"), blank=True, null=True)
     image = ImageField(upload_to="posts/top-images",
         verbose_name=_("Image")
     )
@@ -36,3 +37,8 @@ class Post(models.Model):
     def get_url(self):
         return self.url if self.url else \
             reverse('post-details', args=[self.slug])
+
+    def show_url(self):
+        if not self.url and not self.content:
+            return False
+        return True
