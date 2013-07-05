@@ -496,13 +496,29 @@ ul {
 }
 .banner {
   background-color: #545E64;
-  padding: 30px 80px 7px 70px;
-  height: 290px;
+  padding: 15px 88px 40px 88px;
+  height: 235px;
+  overflow: hidden;
 }
 .banner .more {
   font-style: italic;
   font-weight: bold;
   color: #6f1030;
+}
+.banner ul li {
+  padding: 0;
+}
+.banner img {
+  margin: 0 17px 0 0;
+}
+.banner article {
+  width: 420px;
+}
+.banner .bullets {
+  margin: 3px 0;
+}
+.banner i {
+  font-style: italic;
 }
 .index-recommend {
   font-family: MIC,Sans-serif;

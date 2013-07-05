@@ -8,23 +8,11 @@
 		<ul class="homepage-slider">
       {% for post in  posts %}
             <li class="active" data-article="{{ forloop.counter }}" {% if not forloop.counter == 1 %}style="display:none"{% endif %}>
-                {% thumbnail post.image "230x230" crop="center" as im %}
+                {% thumbnail post.image "242x237" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                 {% endthumbnail %}
 			  <article>
-                  <!-- <header>
-                    <a href="{% url post-details post.slug %}">{{ post.title }}</a>
-                  </header> -->
                   <p>{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
-                  <!-- <p>
-                    <i>Lorem Ipsum</i> <b>is simply dummy text of</b>
-                    <br>
-                    <span>the printing and typesetting industry.</span>
-                    <br>
-                    
-
-                      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</i>
-                  </p> -->
                 </article>
             </li>
     {% endfor %}
