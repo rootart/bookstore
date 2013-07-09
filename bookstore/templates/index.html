@@ -9,7 +9,7 @@
       {% for post in  posts %}
             <li class="active" data-article="{{ forloop.counter }}" {% if not forloop.counter == 1 %}style="display:none"{% endif %}>
                 {% thumbnail post.image "242x237" crop="center" as im %}
-                    <a href=""><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+                    {% if post.show_url %}<a href="{{ post.get_url }}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>{% else %}<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">{% endif %}
                 {% endthumbnail %}
 			  <article>
                   <p>{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
