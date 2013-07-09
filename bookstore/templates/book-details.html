@@ -67,7 +67,7 @@ $('document').ready(function(){
 	  </ul>
 	  <p class="price">
       цена: <b {% if product.stock_price %}style="text-decoration: line-through"{% endif %}>{{ product.price|floatformat:"-2" }}  грн</b> {% if product.stock_price %}<b style="color: #6f1030">{{ product.stock_price|floatformat:"-2" }} грн</b>{% endif %}</p>
-	  <p class="waiting">{% if product.available_status == 2 %}есть в наличии{% elif product.available_status == 1 %}ожидается поступление{% else %}нет в наличии{% endif %}</p>
+	  <p class="waiting">{% if product.available_status == 2 %}есть в наличии{% elif product.available_status == 1 %}ожидается поступление{% elif product.available_status == 3 %}предварительный заказ{% else %}нет в наличии{% endif %}</p>
 	  <a href="javascript:;" data-load data-url="{% url book-order product.category.slug product.slug %}" class="btn-order" id="show-popup">{% if product.available_status == 2 %}купить{% else %}заказать{% endif %}</a>
 	  <div class="tags">
       {# <header>{% trans "теги" %}:</header> #}

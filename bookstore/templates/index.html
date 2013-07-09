@@ -9,7 +9,7 @@
       {% for post in  posts %}
             <li class="active" data-article="{{ forloop.counter }}" {% if not forloop.counter == 1 %}style="display:none"{% endif %}>
                 {% thumbnail post.image "242x237" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    <a href=""><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
                 {% endthumbnail %}
 			  <article>
                   <p>{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
@@ -27,12 +27,12 @@
    </div>
    
    <div class='index-recommend'>
-     Photoartbook рекомендует
+     PhotoArtBook рекомендует
    </div>
             
 	<hr>
 			
-        <div class="catalogue cf">
+        <div class="catalogue cf" style="margin-top: 31px;">
           {% for product in products %}
           		<a href="{% url book-details product.category.slug product.slug %}" class=""> 
                       <figure>

@@ -481,7 +481,7 @@ ul {
 	
   border-radius: 50px;
 	
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;
+/*  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;*/
   display: inline-block;
 	vertical-align: middle;
 	
@@ -510,6 +510,7 @@ ul {
 }
 .banner img {
   margin: 0 17px 0 0;
+  outline: 3px solid #fff;
 }
 .banner article {
   width: 420px;
@@ -521,11 +522,11 @@ ul {
   font-style: italic;
 }
 .index-recommend {
-  font-family: MIC,Sans-serif;
-  font-size: 1.3em;
-  text-transform: uppercase;
+/*  font-family: MIC,Sans-serif;*/
+  font-size: 1.4em;
+/*  text-transform: uppercase;*/
   color: #941A4D;
-  margin: 20px 0 0 0;
+  margin: 20px 0 11px 0;
   font-weight: bold;
 }
 .catalogue {
