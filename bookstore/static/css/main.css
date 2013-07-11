@@ -496,8 +496,8 @@ ul {
 }
 .banner {
   background-color: #545E64;
-  padding: 15px 88px 40px 88px;
-  height: 235px;
+  padding: 15px 88px 36px 88px;
+  height: 239px;
   overflow: hidden;
 }
 .banner .more {
@@ -509,14 +509,20 @@ ul {
   padding: 0;
 }
 .banner img {
-  margin: 0 17px 0 0;
-  outline: 3px solid #fff;
+  margin: 3px 17px 0 0;
+/*  outline: 3px solid #fff;*/
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-o-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
 }
 .banner article {
   width: 420px;
 }
 .banner .bullets {
-  margin: 3px 0;
+  margin: 16px 0 0;
 }
 .banner i {
   font-style: italic;
