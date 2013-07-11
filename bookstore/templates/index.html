@@ -8,7 +8,7 @@
 		<ul class="homepage-slider">
       {% for post in  posts %}
             <li class="active" data-article="{{ forloop.counter }}" {% if not forloop.counter == 1 %}style="display:none"{% endif %}>
-                {% thumbnail post.image "236x231" crop="center" as im %}
+                {% thumbnail post.image "236x236" crop="center" as im %}
                     {% if post.show_url %}<a href="{{ post.get_url }}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>{% else %}<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">{% endif %}
                 {% endthumbnail %}
 			  <article>

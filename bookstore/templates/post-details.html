@@ -4,16 +4,16 @@
 {% block subcategories %}{% endblock subcategories %}
 
 {% block content %}
-<div class="post">
+<div class="post search-wrap">
       <img src="{{ post.image.url }}">
-      
    <article>
-          <header>
-            {{ post.title }}
-          </header>
+     <header>
+       {{ post.title }}
+     </header>
           <p>{{ post.content|linebreaksbr }}</p>
        </article>
  </div>
+
  <hr>
 {% include "subscribe.html" %}
 {% endblock content %}
