@@ -520,6 +520,7 @@ ul {
 }
 .banner article {
   width: 420px;
+  padding: 3px 0 0 0;
 }
 .banner .bullets {
   margin: 9px 0 0;
