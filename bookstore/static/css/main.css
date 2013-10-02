@@ -699,7 +699,7 @@ ul {
 	width: 300px;
 	overflow: hidden;
   background: #fff;
-  box-shadow: 4px 4px 7px rgba(76, 76, 76, 0.45);
+  box-shadow: 4px 4px 7px 1px rgba(76, 76, 76, 0.45);
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
   -ms-box-sizing: border-box;
