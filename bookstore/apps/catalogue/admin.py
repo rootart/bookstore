@@ -10,6 +10,7 @@ from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.contrib import admin
 from django.utils.html import strip_tags
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.admin.util import label_for_field
 from django.utils.translation import ugettext_lazy as _
 
@@ -17,6 +18,7 @@ from .models import Category, Publisher, Tags, TextLanguage,\
     Product, ProductImage, BindingType
 
 from sorl.thumbnail.admin import AdminImageMixin
+
 
 class AdjustableColumnsAdminMixin(object):
 
@@ -112,10 +114,24 @@ class ProductImageInline(AdminImageMixin, admin.TabularInline):
     ordering = ('position',)
 
 
+class CategoryProductGroupFilter(admin.SimpleListFilter):
+    title = _('Category or Extra Category')
+    parameter_name = 'ce'
+
+    def lookups(self, request, model_admin):
+        return Category.objects.values_list('id', 'name')
+
+    def queryset(self, request, queryset):
+        if not self.value():
+            return queryset
+        else:
+            val = int(self.value())
+            return queryset.filter(Q(category__id=val) | Q(extra_category__id=val))
+
 class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmin):
     list_display = ("__unicode__", "category", "extra_category", "available_status", "homepage_position",\
     "catalogue_position", "category_position", "stock_price")
-    list_filter = ("show_on_main", "category", "available_status", "publisher")
+    list_filter = ("show_on_main", CategoryProductGroupFilter, "category", "available_status", "publisher")
     prepopulated_fields = {'slug': ('author', 'name')}
     inlines = [ProductImageInline,]
     fields = (
