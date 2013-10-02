@@ -214,10 +214,12 @@ class ProductImage(models.Model):
     caption = models.TextField(blank=True, null=True,
         verbose_name=_("Image caption")
     )
+    position = models.PositiveIntegerField(_("Image position"), default=0)
 
     class Meta:
         verbose_name = _("Product image")
         verbose_name_plural = _("Product images")
+        ordering = ['position',]
 
     def __unicode__(self):
         return self.product.name

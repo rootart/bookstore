@@ -109,6 +109,7 @@ class TextLanguageAdmin(admin.ModelAdmin):
 
 class ProductImageInline(AdminImageMixin, admin.TabularInline):
     model = ProductImage
+    ordering = ('id',)
 
 
 class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmin):
