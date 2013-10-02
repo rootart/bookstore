@@ -56,7 +56,11 @@ $('document').ready(function(){
             {{ product.name }}{% if product.additional_name_info %}<br>
             <span class="additional-title">{{ product.additional_name_info }}</span>{% endif %}
           </header>
-          <p class="desc">{{ product.short_description|linebreaksbr }} {% if product.description %}<a href="javascript:;" data-description-show class="collapse"> подробнее</a> {% endif %}</p><p class="desc detailed-description">{{ product.description|linebreaksbr }}<a href="javascript:;" data-description-hide  class="collapse"> скрыть</a></p>
+          <p class="desc">{{ product.short_description|linebreaksbr }} {% if product.description  and not product.description_url %}<a href="javascript:;" data-description-show class="collapse"> подробнее</a> {% endif %}
+          {% if product.description_url %}<a href="{{ product.description_url }}" class="collapse"> подробнее</a> {% endif %}
+          {% if not product.description_url %}
+           </p><p class="desc detailed-description">{{ product.description|linebreaksbr }}<a href="javascript:;" data-description-hide  class="collapse"> скрыть</a></p>
+          {% endif %}
 	  <ul class="detail-list">
 		  {% if product.publisher %}<li>издатель: {{ product.publisher.name }}</li>{% endif %}
 		  {% if product.publish_year %}<li>год издания: {{ product.publish_year }}</li>{% endif %}

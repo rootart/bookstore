@@ -127,6 +127,9 @@ class Product(models.Model):
     short_description = models.TextField(_('Short description'),
         blank=True, null=True
     )
+    description_url = models.CharField(_("Description URL"),
+        blank=True, null=True, max_length=255
+    )
     description = models.TextField(_("Description"),
         blank=True, null=True
     )

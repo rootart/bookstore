@@ -109,7 +109,7 @@ class TextLanguageAdmin(admin.ModelAdmin):
 
 class ProductImageInline(AdminImageMixin, admin.TabularInline):
     model = ProductImage
-    ordering = ('id',)
+    ordering = ('position',)
 
 
 class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmin):
@@ -123,7 +123,7 @@ class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmi
         ('catalogue_position',),
         ('show_on_main', 'homepage_position'),
         'author', 'name', 'additional_name_info', 'catalogue_name', 'slug',
-        ('short_description', 'description'),
+        ('short_description', 'description_url', 'description'),
         'publisher', 'publish_year', 'binding_type', 'pages',
         'width', 'height', 'units', 'language', 'available_status',
         'price', 'stock_price', 'main_cover_image', 'catalogue_image', 'is_active'
