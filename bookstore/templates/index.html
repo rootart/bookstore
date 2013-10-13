@@ -12,7 +12,27 @@
                     {% if post.show_url %}<a href="{{ post.get_url }}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>{% else %}<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">{% endif %}
                 {% endthumbnail %}
 			  <article>
-                  <p>{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
+          {% if post.pre_title_section %}
+            <div class="pre-title-section" style="text-transform: uppercase; font-size: 13px">
+              {{ post.pre_title_section }}
+            </div>
+          {% endif %}
+          {% if post.title %}
+            <div class="title-section" style="font-size: 26px; line-height: 25px;{% if post.pre_title_section %}padding: 2px;{% endif %}">
+              {{ post.title }}
+            </div>
+          {% endif %}
+          {% if post.author_section %}
+          <div class="author-section" style="font-size: 13px;">
+            {{ post.author_section }}
+          </div>
+          {% endif %}
+          {% if post.post_author_section  %}
+          <div class="post-autor-section">
+            <em style="font-size: 12px;">{{ post.post_author_section }}</em>
+          </div>
+          {% endif %}
+                  <p style="padding-top: 8px;">{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
                 </article>
             </li>
     {% endfor %}

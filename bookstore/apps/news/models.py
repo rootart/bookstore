@@ -6,7 +6,16 @@ from sorl.thumbnail import ImageField
 
 
 class Post(models.Model):
+    pre_title_section = models.CharField(_("Pre title section"), max_length=255,
+        blank=True, null=True
+    )
     title = models.CharField(_("Post title"), max_length=255)
+    author_section = models.CharField(_("Author section"), max_length=255,
+        blank=True, null=True
+    )
+    post_author_section = models.CharField(_("Post author section"), max_length=255,
+        blank=True, null=True
+    )
     slug = models.SlugField(_("Post url"), unique=True)
     banner_content = models.TextField(_("Banner content"), blank=True, null=True)
     content = models.TextField(_("Post content"), blank=True, null=True)
