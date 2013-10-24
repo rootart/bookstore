@@ -112,6 +112,7 @@ class TextLanguageAdmin(admin.ModelAdmin):
 class ProductImageInline(AdminImageMixin, admin.TabularInline):
     model = ProductImage
     ordering = ('position',)
+    extra = 6
 
 
 class CategoryProductGroupFilter(admin.SimpleListFilter):
@@ -128,7 +129,9 @@ class CategoryProductGroupFilter(admin.SimpleListFilter):
             val = int(self.value())
             return queryset.filter(Q(category__id=val) | Q(extra_category__id=val))
 
+
 class ProductAdmin(AdjustableColumnsAdminMixin, AdminImageMixin, admin.ModelAdmin):
+    save_on_top = True
     list_display = ("__unicode__", "category", "extra_category", "available_status", "homepage_position",\
     "catalogue_position", "category_position", "stock_price")
     list_filter = ("show_on_main", CategoryProductGroupFilter, "category", "available_status", "publisher")

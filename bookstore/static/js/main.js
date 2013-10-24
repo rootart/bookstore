@@ -58,7 +58,7 @@
     });
     
     var slider = $('ul.homepage-slider li'), bullets = $('.bullets a'),
-         firstSlider = slider.eq(0), timeInterval = 7000;
+         firstSlider = slider.eq(0), timeInterval = 10000;
     var timer = setInterval(function() {
       
       
