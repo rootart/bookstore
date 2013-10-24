@@ -23,7 +23,7 @@
             </div>
           {% endif %}
           {% if post.author_section %}
-          <div class="author-section" style="font-size: 15px;">
+          <div class="author-section" style="font-size: 18px;">
             {{ post.author_section }}
           </div>
           {% endif %}
@@ -32,7 +32,7 @@
             <em style="font-size: 12px;">{{ post.post_author_section }}</em>
           </div>
           {% endif %}
-                  <p style="padding-top: 8px;">{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
+                  <p style="padding-top: 8px; line-height: 1.4">{{ post.banner_content|safe }} {% if post.show_url %}<a class="more" href="{{ post.get_url }}">подробнее</a>{% endif %}</p>
                 </article>
             </li>
     {% endfor %}
