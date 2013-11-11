@@ -57,7 +57,7 @@ $('document').ready(function(){
             <span class="additional-title">{{ product.additional_name_info }}</span>{% endif %}
           </header>
           <p class="desc">{{ product.short_description|linebreaksbr }} {% if product.description  and not product.description_url %}<a href="javascript:;" data-description-show class="collapse"> подробнее</a> {% endif %}
-          {% if product.description_url %}<a href="{{ product.description_url }}" class="collapse"> подробнее</a> {% endif %}
+          {% if product.description_url %}<a target="_blank" href="{{ product.description_url }}" class="collapse"> подробнее</a> {% endif %}
           {% if not product.description_url %}
            </p><p class="desc detailed-description">{{ product.description|linebreaksbr }}<a href="javascript:;" data-description-hide  class="collapse"> скрыть</a></p>
           {% endif %}
