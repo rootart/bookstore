@@ -66,7 +66,8 @@
         $('.bullets a').eq(0).click();
       }
       else {
-        bullets.next().click();
+        var index = $('.bullets a').index($('.bullets a.active'));
+        $('.bullets a').eq(index+1).click();
       }
     }, timeInterval);
     
