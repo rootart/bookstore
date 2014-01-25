@@ -20,7 +20,7 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+print os.path.join(PROJECT_DIR, 'bookstore.db')
 
 if not DEBUG:
     import dj_database_url
