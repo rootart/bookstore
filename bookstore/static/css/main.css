@@ -477,7 +477,7 @@ ul {
 	text-align: center;
 }
 .bullets a {
-  background: #969696;
+  background: rgb(200, 203, 204);
 	
   border-radius: 50px;
 	
@@ -492,7 +492,7 @@ ul {
 .bullets .active, 
 .bullets a:hover {
   /*background: #6f1030;*/
-	background: #6f1030;
+	background: #fff;
 }
 .banner {
   background-color: #3d4448;
@@ -503,7 +503,7 @@ ul {
 .banner .more {
   font-style: italic;
   font-weight: bold;
-  color: #6f1030;
+  color: rgb(200, 203, 204);
 }
 .banner ul li {
   padding: 0;
