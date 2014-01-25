@@ -159,3 +159,6 @@ LOGGING = {
 
 ORDER_MANAGERS = ['photoartbook.ua@gmail.com',]
 DEFAULT_FROM = 'photoartbook.ua@gmail.com'
+
+MANDRILL_API_KEY = ""
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
